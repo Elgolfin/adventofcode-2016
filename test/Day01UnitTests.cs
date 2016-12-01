@@ -138,6 +138,16 @@ namespace AdventOfCode1016Tests
             d.MoveAlongThePath();
             Assert.Equal(12, d.GetBlocksAwayFromStart());
         }
-        
+
+        [Fact]
+        public void Moving_R8_R4_R4_R8_Should_Return_First_Location_Visited_Twice_Is_4_Blocks_Away() 
+        {
+            var input = "R8, R4, R4, R8";
+            var d = new Day01(input);
+            d.MoveAlongThePath();
+            Assert.Equal(4, d.FirstVisitedLocationTwice);
+        }
+
+
     }
 }

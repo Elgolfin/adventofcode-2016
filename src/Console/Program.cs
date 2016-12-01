@@ -11,6 +11,7 @@ namespace ConsoleApplication
             var d = new Day01(input);
             d.MoveAlongThePath();
             Console.WriteLine($"You are {d.GetBlocksAwayFromStart()} blocks away");
+            Console.WriteLine($"The first location visited twice is {d.FirstVisitedLocationTwice} blocks away");
         }
     }
 }

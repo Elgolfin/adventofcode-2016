@@ -12,6 +12,10 @@ namespace AdventOfCode1016
         public int y = 0;
         public enum Direction {North, East, South, West}; 
         public Direction HeadTo = Direction.North;
+                
+        public Dictionary<string, int> VisitedLocations = new Dictionary<string, int>{{"0,0", 1}};
+
+        public int FirstVisitedLocationTwice = 0;
 
         public List<string> Path = new List<string>();
         
@@ -69,45 +73,71 @@ namespace AdventOfCode1016
 
         public void GoFromNorthTo (string dir, int dist) {
             if (dir == "R") {
-                x += dist;
+                MoveX(dist, 1);
                 HeadTo = Direction.East;
             }
             if (dir == "L") {
-                x -= dist;
+                MoveX(dist, -1);
                 HeadTo = Direction.West;
             }
         }
 
         public void GoFromSouthTo (string dir, int dist) {
             if (dir == "R") {
-                x -= dist;
+                MoveX(dist, -1);
                 HeadTo = Direction.West;
             }
             if (dir == "L") {
-                x += dist;
+                MoveX(dist, 1);
                 HeadTo = Direction.East;
             }
         }
 
         public void GoFromEastTo (string dir, int dist) {
             if (dir == "R") {
-                y -= dist;
+                MoveY(dist, -1);
                 HeadTo = Direction.South;
             }
             if (dir == "L") {
-                y += dist;
+                MoveY(dist, 1);
                 HeadTo = Direction.North;
             }
         }
 
         public void GoFromWestTo (string dir, int dist) {
             if (dir == "R") {
-                y += dist;
+                MoveY(dist, 1);
                 HeadTo = Direction.North;
             }
             if (dir == "L") {
-                y -= dist;
+                MoveY(dist, -1);
                 HeadTo = Direction.South;
+            }
+        }
+
+        private void MoveX (int dist, int factor) {
+            for (int i = 0 ; i < dist ; i++) {
+                x += 1 * factor;
+                SaveLocation();
+            }
+        }
+
+        private void MoveY (int dist, int factor) {
+            for (int i = 0 ; i < dist ; i++) {
+                y += 1 * factor;
+                SaveLocation();
+            }
+        }
+
+        private void SaveLocation () {
+            var location = $"{x},{y}";
+            if (VisitedLocations.Keys.Contains(location)) {
+                VisitedLocations[location]++;
+                if (FirstVisitedLocationTwice == 0) {
+                    FirstVisitedLocationTwice = GetBlocksAwayFromStart();
+                }
+            } else {
+                VisitedLocations[location] = 1;
             }
         }
     }
