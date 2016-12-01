@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/owqenrdfs8pd1hwe?svg=true)](https://ci.appveyor.com/project/Elgolfin/adventofcode-2016)
+
 # Advent of Code 2016
 
 Online Resources:
