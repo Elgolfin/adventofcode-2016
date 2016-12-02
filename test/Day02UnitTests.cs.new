@@ -365,7 +365,7 @@ namespace AdventOfCode1016Tests
         // Parse Instructions
         // /////////////////////////////////////////////////
         [Fact]
-        public void Moving_From_Instructions_With_Defualt_KeypadMap_ULLRRDDDLURDLUUUD_Returns_Code_1985() 
+        public void Moving_From_Instructions_ULLRRDDDLURDLUUUD_Returns_Code_1985() 
         {
             var expectedResult = "1985";
             var d = new Day02();
@@ -374,15 +374,6 @@ namespace AdventOfCode1016Tests
             Assert.Equal(expectedResult, d.Code);
         }
 
-        [Fact]
-        public void Moving_From_Instructions_With_KeypadMap_13_ULLRRDDDLURDLUUUD_Returns_Code_5DB3() 
-        {
-            var expectedResult = "5DB3";
-            var d = new Day02();
-            d.Instructions = "ULL\nRRDDD\nLURDL\nUUUUD";
-            d.ParseInstructions(d.Move_13);
-            Assert.Equal(expectedResult, d.Code);
-        }
-
+        
     }
 }

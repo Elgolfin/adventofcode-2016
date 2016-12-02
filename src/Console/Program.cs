@@ -35,8 +35,10 @@ ULUDLLUDDULRUURDRURDUDUDLUURDDDRRLUDURURDRURRLDRDURLRLLRRDDRRDRRRUULURUDURUDULRR
             d02.ParseInstructions();
             Console.WriteLine($"Day 02");
             Console.WriteLine($"------");
+            Console.WriteLine($"The code is: {d02.Code}");d02 = new Day02();
+            d02.Instructions = input;
+            d02.ParseInstructions(d02.Move_13);
             Console.WriteLine($"The code is: {d02.Code}");
-            //Console.WriteLine($"");
             Console.WriteLine($"---------------------------------------------");
 
 
