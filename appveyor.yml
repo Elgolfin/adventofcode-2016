@@ -1,4 +1,4 @@
-version: '1.0.{build}'
+version: '1.0.0.build{build}'
 configuration:
 - Debug
 platform: Any CPU
@@ -8,13 +8,27 @@ environment:
 init:
 - ps: $Env:LABEL = "CI" + $Env:APPVEYOR_BUILD_NUMBER.PadLeft(5, "0")
 before_build:
+- nuget restore test/packages.config -PackagesDirectory packages
 - appveyor-retry dotnet restore -v Minimal
 build_script:
 - dotnet build "src\Console" -c %CONFIGURATION% --version-suffix %LABEL%
+- dotnet build "test" -c %CONFIGURATION% --version-suffix %LABEL%
+- ls -l test/bin/Debug/netcoreapp1.0
+- cp packages/xunit.extensibility.execution.2.1.0/lib/net45/xunit.execution.desktop.dll test/bin/Debug/netcoreapp1.0
+- cp packages/xunit.extensibility.core.2.1.0/lib/dotnet/xunit.core.dll test/bin/Debug/netcoreapp1.0
+- cp packages/xunit.runner.visualstudio.2.1.0/build/_common/xunit.abstractions.dll test/bin/Debug/netcoreapp1.0
+- cp packages/xunit.assert.2.1.0/lib/dotnet/xunit.assert.dll test/bin/Debug/netcoreapp1.0
+- cp packages/System.Runtime.4.1.0/ref/netcore50/System.Runtime.dll test/bin/Debug/netcoreapp1.0
+- ls -l test/bin/Debug/netcoreapp1.0
 after_build:
 - dotnet publish "src\Console" -c %CONFIGURATION% --no-build --version-suffix %LABEL% -o artifacts\Console
+#test_script:
+#- dotnet test "test" -c %CONFIGURATION%
 test_script:
-- dotnet test "test" -c %CONFIGURATION%
+- ps: >-
+    ./packages/OpenCover.4.6.519/tools/OpenCover.Console.exe -register:user -target:./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe "-targetargs:""test/bin/Debug/netcoreapp1.0/test.dll"" -noshadow -appveyor -parallel none -xml results.xml" -filter:"+[*.*]* -[*UnitTests.*]*" -output:opencoverCoverage.xml
+
+    #./packages/coveralls.net.0.6.0/tools/csmacnz.Coveralls.exe --opencover -i ./opencoverCoverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_JOB_ID
 artifacts:
 - path: artifacts\**\*.*
 cache:
