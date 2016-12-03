@@ -55,5 +55,28 @@ namespace AdventOfCode1016Tests
             Assert.Equal(2, d.NumberOfPossibleTriangles);
         }
 
+        [Fact]
+        public void Input_With_6_Vertical_Triangles_With_Many_Whitespaces_Should_Return_6() 
+        {
+            var input = @"101    301 501
+102  302    502
+103   303   503
+201   401        601
+202    402    602
+203 403  603";
+            var d = new Day03(input, true);
+            Assert.Equal(6, d.Triangles.Length);
+            Assert.Equal("101 102 103", d.Triangles[0]);
+            Assert.Equal("301 302 303", d.Triangles[1]);
+            Assert.Equal("501 502 503", d.Triangles[2]);
+            Assert.Equal("201 202 203", d.Triangles[3]);
+            Assert.Equal("401 402 403", d.Triangles[4]);
+            Assert.Equal("601 602 603", d.Triangles[5]);
+            d.ParseTriangles();
+            Assert.Equal(6, d.NumberOfPossibleTriangles);
+        }
+
+        
+
     }
 }

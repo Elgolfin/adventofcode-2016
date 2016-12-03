@@ -1932,8 +1932,9 @@ namespace ConsoleApplication
             Console.WriteLine($"Day 03");
             Console.WriteLine($"------");
             Console.WriteLine($"There are {d03.NumberOfPossibleTriangles} possible triangles");
-            d03 = new Day03(String.Empty);
-            Console.WriteLine($"");
+            d03 = new Day03(input, true);
+            d03.ParseTriangles();
+            Console.WriteLine($"There are {d03.NumberOfPossibleTriangles} possible triangles");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 
