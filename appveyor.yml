@@ -5,6 +5,8 @@ platform: Any CPU
 environment:
   # Don't report back to the mothership
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
+  COVERALLS_REPO_TOKEN:
+    secure: MVvYQBGULYonZ2Kl14jFKBLrrgrdurIi0iwQdUK6kiGsHegGjk+KMytjYL//6uWi
 init:
 - ps: $Env:LABEL = "CI" + $Env:APPVEYOR_BUILD_NUMBER.PadLeft(5, "0")
 before_build:
@@ -18,17 +20,22 @@ build_script:
 - cp packages/xunit.extensibility.core.2.1.0/lib/dotnet/xunit.core.dll test/bin/Debug/netcoreapp1.0
 - cp packages/xunit.runner.visualstudio.2.1.0/build/_common/xunit.abstractions.dll test/bin/Debug/netcoreapp1.0
 - cp packages/xunit.assert.2.1.0/lib/dotnet/xunit.assert.dll test/bin/Debug/netcoreapp1.0
-- cp packages/System.Runtime.4.1.0/ref/netcore50/System.Runtime.dll test/bin/Debug/netcoreapp1.0
+- cp packages/System.Runtime.4.1.0/lib/net462/System.Runtime.dll test/bin/Debug/netcoreapp1.0
+- cp packages/System.Linq.4.1.0/lib/net463/System.Linq.dll test/bin/Debug/netcoreapp1.0
+- cp packages/System.Text.RegularExpressions.4.1.0/lib/net463/System.Text.RegularExpressions.dll test/bin/Debug/netcoreapp1.0
+- cp packages/System.Runtime.Extensions.4.1.0/lib/net462/System.Runtime.Extensions.dll test/bin/Debug/netcoreapp1.0
 - ls -l test/bin/Debug/netcoreapp1.0
 after_build:
 - dotnet publish "src\Console" -c %CONFIGURATION% --no-build --version-suffix %LABEL% -o artifacts\Console
 #test_script:
 #- dotnet test "test" -c %CONFIGURATION%
 test_script:
-- ps: >-
-    ./packages/OpenCover.4.6.519/tools/OpenCover.Console.exe -register:user -target:./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe "-targetargs:""test/bin/Debug/netcoreapp1.0/test.dll"" -noshadow -appveyor -parallel none -xml results.xml" -filter:"+[*.*]* -[*UnitTests.*]*" -output:opencoverCoverage.xml
-
-    #./packages/coveralls.net.0.6.0/tools/csmacnz.Coveralls.exe --opencover -i ./opencoverCoverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_JOB_ID
+- ls -l test/bin/Debug/netcoreapp1.0
+- ps: ./packages/OpenCover.4.6.519/tools/OpenCover.Console.exe -register:user -target:./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe "-targetargs:""test.dll"" -noshadow -appveyor -parallel none -xml results.xml" -targetdir:./test/bin/Debug/netcoreapp1.0/ -filter:"+[AdventOfCode2016*]*" -output:opencoverCoverage.xml -returntargetcode -skipautoprops -log:ALL
+#- ps: ./packages/coveralls.net.0.6.0/tools/csmacnz.Coveralls.exe --opencover -i ./opencoverCoverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_JOB_ID
+#test:
+#  assemblies:
+#    - 'test/bin/Debug/netcoreapp1.0/test.dll'
 artifacts:
 - path: artifacts\**\*.*
 cache:
