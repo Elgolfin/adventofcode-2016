@@ -116,7 +116,32 @@ totally-real-room-200[decoy]";
             var d04 = new Day04(input);
             Assert.Equal(1514, d04.SectorIdSum);
         }
+
+        [Fact]
+        public void Decrypt_Name_abcde_With_SectorId_1_Should_Return_bcdef() 
+        {
+            var input = "abcde-1[abcde]";
+            var room = new Room(input);
+            Assert.Equal("bcdef", room.Name);
+        }
         
+        [Fact]
+        public void Decrypt_Name_zzabcd_With_SectorId_1_Should_Return_aabcde() 
+        {
+            var input = "zzabcd-1[zabcd]";
+            var room = new Room(input);
+            Assert.Equal("aabcde", room.Name);
+        }
+        
+        [Fact]
+        public void Decrypt_Name_qzmt_zixmtkozy_ivhz_With_SectorId_343_Should_Return_very_encrypted_name() 
+        {
+            //           very encrypted name
+            var input = "qzmt-zixmtkozy-ivhz-343[zimth]";
+            var room = new Room(input);
+            Assert.Equal("zimth", room.Checksum);
+            Assert.Equal("very encrypted name", room.Name);
+        }
 
     }
 }

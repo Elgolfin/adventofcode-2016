@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Text;
 
 namespace AdventOfCode1016
 {
@@ -9,6 +10,7 @@ namespace AdventOfCode1016
     {
         public string EncryptedNames;
         public int SectorIdSum = 0;
+        public List<Room> Rooms = new List<Room>();
 
         public Day04(string input)
         {
@@ -20,6 +22,7 @@ namespace AdventOfCode1016
             var lines = EncryptedNames.Split('\n').Select(p => p.Trim()).ToList();
             foreach (var encryptedName in lines) {
                 Room r = new Room(encryptedName);
+                Rooms.Add(r);
                 if (r.IsRealRoom()) {
                     SectorIdSum += r.SectorId;
                 }
@@ -31,12 +34,14 @@ namespace AdventOfCode1016
 
         public string EncryptedData = String.Empty;
         public string EncryptedName = String.Empty;
+        public string Name = String.Empty;
         public int SectorId;
         public string Checksum = String.Empty;
 
         public Room (string encryptedData){
             EncryptedData = encryptedData;
             DecryptData();
+            DecryptName();
         }
 
         private void DecryptData () {
@@ -75,6 +80,25 @@ namespace AdventOfCode1016
 
         public bool IsRealRoom () {
             return CalculateChecksum() == Checksum;
+        }
+
+        // How to decrypt:
+        // 1. ascii letter + sector id % 26
+        // 2. if the result > 26 (minus 26 and you got the ascii letter)
+        // 3. dash '-' transforms into space ' '
+        private void DecryptName () {
+            byte[] asciiBytes = Encoding.ASCII.GetBytes(EncryptedName);
+            foreach (var letter in asciiBytes) {
+                if (letter == 45) { // 45 in ascii is space ' '
+                    Name += " ";
+                } else {
+                    var newLetter = letter + (SectorId % 26);
+                    if (newLetter > 122) { // 122 in ascii is 'z'
+                        newLetter = newLetter - 26;
+                    }
+                    Name += (char) newLetter;
+                }
+            }
         }
 
     }

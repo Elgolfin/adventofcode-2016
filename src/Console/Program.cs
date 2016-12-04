@@ -998,8 +998,11 @@ hplazytkpo-prr-cpnptgtyr-379[prtya]
             Console.WriteLine($"Day 04");
             Console.WriteLine($"------");
             Console.WriteLine($"Of the real rooms from the input list, the sum of their sector IDs is {d04.SectorIdSum}");
-            //d04 = new Day04();
-            Console.WriteLine($"");
+            foreach (var r in d04.Rooms) {
+              if (r.Name == "northpole object storage") {
+                Console.WriteLine($"The sector ID of the room where North Pole objects are stored is {r.SectorId}");
+              }
+            }
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 
