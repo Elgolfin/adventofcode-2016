@@ -9,7 +9,7 @@ namespace AdventOfCode1016Tests
 {
     public class Day05UnitTests
     {
-        
+        /*
         [Fact]
         public void Find_Password_With_Door_Id_abc_Should_Return_18f47a30() 
         {
@@ -23,8 +23,8 @@ namespace AdventOfCode1016Tests
             var id = "abc";
             Assert.Equal("05ace8e3", Day05.FindMoreSophisticatedPassword(id));
         }
-
-        /* Incomplete Unit Test but faster
+        */
+        /* // Incomplete Unit Test but faster
         [Fact]
         public void Find_First_Char_Of_Password_With_Door_Id_abc_Should_Return_1() 
         {
