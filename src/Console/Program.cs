@@ -8,7 +8,20 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             string input;
-            
+
+            // /////////////////////////////////////////////////
+            // Day 05
+            // /////////////////////////////////////////////////
+            input = "cxdnnyjw";
+            var password = Day05.FindPassword(input);
+            Console.WriteLine($"Day 05");
+            Console.WriteLine($"------");
+            Console.WriteLine($"Given the actual Door ID <{input}>, the password is {password}");
+            Console.WriteLine($"");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+
             // /////////////////////////////////////////////////
             // Day 04
             // /////////////////////////////////////////////////

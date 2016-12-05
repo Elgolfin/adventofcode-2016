@@ -3,7 +3,9 @@
   "buildOptions": {
     "debugType": "portable"
   },
-  "dependencies": {},
+  "dependencies": {
+    "System.Security.Cryptography.Algorithms": "4.3.0"
+  },
   "frameworks": {
     "netcoreapp1.0": {
       "dependencies": {
