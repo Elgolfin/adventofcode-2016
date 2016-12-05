@@ -24,6 +24,7 @@ build_script:
 - cp packages/System.Linq.4.1.0/lib/net463/System.Linq.dll test/bin/Debug/netcoreapp1.0
 - cp packages/System.Text.RegularExpressions.4.1.0/lib/net463/System.Text.RegularExpressions.dll test/bin/Debug/netcoreapp1.0
 - cp packages/System.Runtime.Extensions.4.1.0/lib/net462/System.Runtime.Extensions.dll test/bin/Debug/netcoreapp1.0
+- cp packages/System.Security.Cryptography.Algorithms.4.2.0/lib/net461/System.Security.Cryptography.Algorithms.dll test/bin/Debug/netcoreapp1.0
 - ls -l test/bin/Debug/netcoreapp1.0
 after_build:
 - dotnet publish "src\Console" -c %CONFIGURATION% --no-build --version-suffix %LABEL% -o artifacts\Console

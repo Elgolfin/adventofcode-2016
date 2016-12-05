@@ -28,14 +28,45 @@ namespace AdventOfCode1016
             return password;
         }
 
-        private static IEnumerable<char> FindChar (string id) {
+        public static string FindMoreSophisticatedPassword (string id, int numOfChar = 8) 
+        {
+            var i = 0;
+            var currentPassword = "........";
+            foreach (var hash in Day05.FindChar(id, 2)) {
+                var newPassword = FillPassword(currentPassword, hash);
+                if (currentPassword != newPassword) {
+                   currentPassword = newPassword;
+                   i++;
+                }
+                if (i == numOfChar) { break; }
+            }
+            return currentPassword;
+        }
+
+        private static string FillPassword (string password, string hash) {
+            
+            if (!Char.IsDigit(hash[0])) {
+                return password;
+            }
+            
+            var updatedPassword = new StringBuilder(password);
+            var passwordChar = hash[1];
+            var position = 0;
+            Int32.TryParse(hash[0].ToString(), out position);
+            if (position < 8 && password[position] == '.') {
+                updatedPassword[position] = passwordChar;
+            }
+            return updatedPassword.ToString();
+        }
+
+        private static IEnumerable<string> FindChar (string id, int numOfChar = 1) {
             var index = 0;
             while (true) {
                 using (MD5 md5Hash = MD5.Create())
                 {
                     string hash = GetMd5Hash(md5Hash, $"{id}{index}");
                     if (hash.Substring(0,5) == _mask) {
-                        yield return (char) hash[5];
+                        yield return hash.Substring(5, numOfChar);
                     }
                 }
                 index++;

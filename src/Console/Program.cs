@@ -13,11 +13,14 @@ namespace ConsoleApplication
             // Day 05
             // /////////////////////////////////////////////////
             input = "cxdnnyjw";
-            var password = Day05.FindPassword(input);
+            //var password = Day05.FindPassword(input); // Uncomment to run the computing (quite slow)
+            var password = "f77a0e6e";
             Console.WriteLine($"Day 05");
             Console.WriteLine($"------");
             Console.WriteLine($"Given the actual Door ID <{input}>, the password is {password}");
-            Console.WriteLine($"");
+            //password = Day05.FindMoreSophisticatedPassword(input); // Uncomment to run the computing (quite slower than the previous one)
+            password = "999828ec";
+            Console.WriteLine($"Given the actual Door ID <{input}>, the more sophisticated password is {password}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 

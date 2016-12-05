@@ -95,7 +95,7 @@ Online Resources:
 [Day02SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day02.cs
 [Day03SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day03.cs
 [Day04SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day04.cs
-[Day05SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day05.cs
+[Day05SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day04.cs
 [Day06SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day06.cs
 [Day07SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day07.cs
 [Day08SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day08.cs
@@ -115,7 +115,7 @@ Online Resources:
 [Day01UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day01UnitTests.cs
 [Day02UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day02UnitTests.cs
 [Day03UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day03UnitTests.cs
-[Day04UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day04UnitTests.cs
+[Day04UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day05_UnitTest.cs
 [Day05UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day05_UnitTest.cs
 [Day06UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day06_UnitTest.cs
 [Day07UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day07_UnitTest.cs
