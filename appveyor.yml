@@ -37,7 +37,7 @@ after_build:
 test_script:
 - dotnet test "test" -c %CONFIGURATION%
 #test_script:
-#- C:\users\appveyor\.nuget\packages\OpenCover\4.6.519\tools\OpenCover.Console.exe -target:C:\users\appveyor\.nuget/packages/xunit.runner.console/2.1.0/tools/xunit.console.exe "-targetargs:""test.dll"" -noshadow -appveyor -parallel none -xml results.xml" -targetdir:./artifacts\console -filter:"+[AdventOfCode2016*]*" -output:opencoverCoverage.xml -returntargetcode -skipautoprops -log:ALL -searchdirs:C:\users\appveyor\.nuget\packages 
+#- C:\users\appveyor\.nuget\packages\OpenCover\4.6.519\tools\OpenCover.Console.exe -target:C:\users\appveyor\.nuget/packages/xunit.runner.console/2.1.0/tools/xunit.console.exe "-targetargs:""test.dll"" -noshadow" -targetdir:./artifacts\console -filter:"+[AdventOfCode2016*]*" -output:opencoverCoverage.xml -returntargetcode -skipautoprops -log:ALL -searchdirs:C:\users\appveyor\.nuget\packages 
 #- ps: $env:OPENCOVER_CONSOLE -register:user -target:$env:XUNIT_CONSOLE "-targetargs:""test.dll"" -noshadow -appveyor -parallel none -xml results.xml" -targetdir:$env:OPENCOVER_TARGETDIR -filter:"+[AdventOfCode2016*]*" -output:opencoverCoverage.xml -returntargetcode -skipautoprops -log:ALL -searchdirs:$env:OPENCOVER_SEARCHDIRS
 #- ps: ./packages/coveralls.net.0.6.0/tools/csmacnz.Coveralls.exe --opencover -i ./opencoverCoverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_JOB_ID
 #test:
