@@ -12,6 +12,8 @@ namespace AdventOfCode1016
         public Dictionary<int, Dictionary<char, int>> Columns = new Dictionary<int, Dictionary<char, int>>();
         public string Message = String.Empty;
 
+        public enum OrderBy {Asc, Desc}; 
+
         public Day06(string input)
         {
             Input = input;
@@ -23,13 +25,17 @@ namespace AdventOfCode1016
             foreach (var line in lines) {
                 ParseLine(line);
             }
-            GetMessage();
         }
 
-        private void GetMessage() {
+        public void GetMessage (OrderBy orderBy = OrderBy.Desc) {
             var msg = new StringBuilder();
             foreach (var col in Columns) {
-                msg.Append(col.Value.OrderByDescending(pair => pair.Value).First().Key);
+                if (orderBy == OrderBy.Desc) {
+                    msg.Append(col.Value.OrderByDescending(pair => pair.Value).First().Key);
+                }
+                else {
+                    msg.Append(col.Value.OrderByDescending(pair => pair.Value).Last().Key);
+                }
             }
             Message = msg.ToString();
         }

@@ -14,11 +14,12 @@ namespace ConsoleApplication
             // /////////////////////////////////////////////////
             input = Day06Input.Data;
             var d06 = new Day06(input);
+            d06.GetMessage();
             Console.WriteLine($"Day 06");
             Console.WriteLine($"------");
             Console.WriteLine($"The error-corrected version of the message being sent is {d06.Message}");
-            
-            Console.WriteLine($"Coming soon...");
+            d06.GetMessage(Day06.OrderBy.Asc);
+            Console.WriteLine($"The error-corrected version of the message being sent is {d06.Message}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 

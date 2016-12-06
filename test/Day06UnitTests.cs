@@ -29,7 +29,7 @@ eadadr";
         }
 
         [Fact]
-        public void Get_Message_Should_Return_easter() 
+        public void Get_Message_Desc_Should_Return_easter() 
         {
             var input = @"eedadn
 drvtee
@@ -49,6 +49,32 @@ dvrsen
 enarar";
             var expected = "easter";
             var d06 = new Day06(input);
+            d06.GetMessage();
+            Assert.Equal(expected, d06.Message);
+        }
+
+        [Fact]
+        public void Get_Message_Asc_Should_Return_easter() 
+        {
+            var input = @"eedadn
+drvtee
+eandsr
+raavrd
+atevrs
+tsrnev
+sdttsa
+rasrtv
+nssdts
+ntnada
+svetve
+tesnvt
+vntsnd
+vrdear
+dvrsen
+enarar";
+            var expected = "advent";
+            var d06 = new Day06(input);
+            d06.GetMessage(Day06.OrderBy.Asc);
             Assert.Equal(expected, d06.Message);
         }
 
