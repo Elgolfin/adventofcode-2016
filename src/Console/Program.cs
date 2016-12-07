@@ -17,7 +17,7 @@ namespace ConsoleApplication
             Console.WriteLine($"Day 07");
             Console.WriteLine($"------");
             Console.WriteLine($"There are {d07.NumberOfIpsSupportingTLS} IPs supporting TLS");
-            Console.WriteLine($"");
+            Console.WriteLine($"There are {d07.NumberOfIpsSupportingSSL} IPs supporting SSL");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 
