@@ -10,6 +10,18 @@ namespace ConsoleApplication
             string input;
 
             // /////////////////////////////////////////////////
+            // Day 07
+            // /////////////////////////////////////////////////
+            input = Day07Input.Data;
+            var d07 = new Day07(input);
+            Console.WriteLine($"Day 07");
+            Console.WriteLine($"------");
+            Console.WriteLine($"There are {d07.NumberOfIpsSupportingTLS} IPs supporting TLS");
+            Console.WriteLine($"");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 06
             // /////////////////////////////////////////////////
             input = Day06Input.Data;
