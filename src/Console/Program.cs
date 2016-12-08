@@ -8,6 +8,20 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             string input;
+            
+            // /////////////////////////////////////////////////
+            // Day 08
+            // /////////////////////////////////////////////////
+            input = Day08Input.Data;
+            var d08 = new Day08(input);
+            d08.Run();
+            Console.WriteLine($"Day 08");
+            Console.WriteLine($"------");
+            Console.WriteLine($"There are {d08.NumberOfLitPixels()} lit pixels");
+            Console.WriteLine($"");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+            
 
             // /////////////////////////////////////////////////
             // Day 07

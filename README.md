@@ -46,6 +46,8 @@ Online Resources:
 [Source Code][Day08SC] | 
 [Unit Tests][Day08UT]
 
+Each 'Command' object should have its own 'Run' logic. Currently, the 'Command' class owns three different kin of execution (Rect, Rotate Row and Rotate Column). Doing this way, when we need to add a command, we will just create a new object without modifying the existing one(s).
+
 ##Day10 Solution
 
 [Source Code][Day10SC] | 
@@ -98,7 +100,7 @@ Online Resources:
 [Day05SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day05.cs
 [Day06SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day06.cs
 [Day07SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day07.cs
-[Day08SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day08.cs
+[Day08SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day08.cs
 
 [Day10SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day10.cs
 [Day11SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day11.cs
@@ -119,7 +121,7 @@ Online Resources:
 [Day05UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day05UnitTests.cs
 [Day06UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day06UnitTests.cs
 [Day07UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day07UnitTests.cs
-[Day08UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day08_UnitTest.cs
+[Day08UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day08UnitTests.cs
 
 [Day10UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day10_UnitTest.cs
 [Day11UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day11_UnitTest.cs
