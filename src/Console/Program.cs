@@ -19,7 +19,7 @@ namespace ConsoleApplication
             Console.WriteLine($"------");
             Console.WriteLine($"There are {d08.NumberOfLitPixels()} lit pixels");
             Console.WriteLine($"");
-            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine(d08.ToString());
             Console.WriteLine($"");
             
 

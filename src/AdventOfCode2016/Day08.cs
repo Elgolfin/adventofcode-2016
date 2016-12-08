@@ -21,12 +21,12 @@ namespace AdventOfCode1016
 
         public int NumberOfLitPixels ()
         {
-            int litPixels = 0;
-            int boundY = Screen.GetUpperBound(0);
-            int boundX = Screen.GetUpperBound(1);
-            for (int y = 0; y <= boundY; y++)
+            var litPixels = 0;
+            var boundY = Screen.GetUpperBound(0);
+            var boundX = Screen.GetUpperBound(1);
+            for (var y = 0; y <= boundY; y++)
             {
-                for (int x = 0; x <= boundX; x++)
+                for (var x = 0; x <= boundX; x++)
                 {
                     if (Screen[y, x] == '#')
                     {
@@ -35,6 +35,22 @@ namespace AdventOfCode1016
                 }
             }
             return litPixels;
+        }
+
+        public override string ToString()
+        {
+            var boundY = Screen.GetUpperBound(0);
+            var boundX = Screen.GetUpperBound(1);
+            var screen = new StringBuilder();
+            for (var y = 0; y <= boundY; y++)
+            {
+                for (var x = 0; x <= boundX; x++)
+                {
+                    screen.Append(Screen[y, x]);
+                }
+                screen.Append("\n");
+            }
+            return screen.ToString();
         }
 
         private void InitializeScreen(int screenX = 6, int screenY = 50) 

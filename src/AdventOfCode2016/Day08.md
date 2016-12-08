@@ -46,3 +46,14 @@ There seems to be an intermediate check of the voltage used by the display: afte
 Your puzzle answer was 106.
 
 The first half of this puzzle is complete! It provides one gold star: *
+
+
+--- Part Two ---
+
+You notice that the screen is only capable of displaying capital letters; in the font it uses, each letter is 5 pixels wide and 6 tall.
+
+After you swipe your card, what code is the screen trying to display?
+
+Your puzzle answer was CFLELOYFCS.
+
+Both parts of this puzzle are complete! They provide two gold stars: **
