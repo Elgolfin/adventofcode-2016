@@ -53,6 +53,8 @@ Each 'Command' object should have its own 'Run' logic. Currently, the 'Command' 
 [Source Code][Day09SC] | 
 [Unit Tests][Day09UT]
 
+Please see the comments above the method 'Decompress_v21' to get the explanation of how to calculate the number of characters who composed the uncompressed string without getting an OutOfMemoryException.
+
 ##Day10 Solution
 
 [Source Code][Day10SC] | 

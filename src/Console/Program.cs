@@ -17,7 +17,7 @@ namespace ConsoleApplication
             Console.WriteLine($"Day 09");
             Console.WriteLine($"------");
             Console.WriteLine($"The decompressed length of the file is {d09.DecompressedInput.Length}");
-            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"The decompressed (v2.1) length of the file is {d09.DecompressedInput_v2_Length}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 
