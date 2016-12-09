@@ -10,6 +10,18 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 09
+            // /////////////////////////////////////////////////
+            input = Day09Input.Data;
+            var d09 = new Day09(input);
+            Console.WriteLine($"Day 09");
+            Console.WriteLine($"------");
+            Console.WriteLine($"The decompressed length of the file is {d09.DecompressedInput.Length}");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 08
             // /////////////////////////////////////////////////
             input = Day08Input.Data;
@@ -20,6 +32,7 @@ namespace ConsoleApplication
             Console.WriteLine($"There are {d08.NumberOfLitPixels()} lit pixels");
             Console.WriteLine($"");
             Console.WriteLine(d08.ToString());
+            Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
             
 
