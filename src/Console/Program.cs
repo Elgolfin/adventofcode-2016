@@ -10,6 +10,20 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 10
+            // /////////////////////////////////////////////////
+            input = Day10Input.Data;
+            var d = new Day10(input, 17, 61);
+            d.InitializeBots();
+            d.RunInstructions();
+            Console.WriteLine($"Day 10");
+            Console.WriteLine($"------");
+            Console.WriteLine($"The number of the bot that is responsible for comparing value-61 microchips with value-17 microchips is {d.GetBotResponsibleToCompare().Id}");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 09
             // /////////////////////////////////////////////////
             input = Day09Input.Data;
