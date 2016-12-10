@@ -19,7 +19,7 @@ namespace ConsoleApplication
             Console.WriteLine($"Day 10");
             Console.WriteLine($"------");
             Console.WriteLine($"The number of the bot that is responsible for comparing value-61 microchips with value-17 microchips is {d.GetBotResponsibleToCompare().Id}");
-            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"The result of multiply together the values of one chip in each of outputs 0, 1, and 2 is {d.Outputs[0].Chip * d.Outputs[1].Chip * d.Outputs[2].Chip}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 

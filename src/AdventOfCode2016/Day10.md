@@ -30,3 +30,15 @@ Based on your instructions, what is the number of the bot that is responsible fo
 Your puzzle answer was 27.
 
 The first half of this puzzle is complete! It provides one gold star: *
+
+
+--- Part Two ---
+
+What do you get if you multiply together the values of one chip in each of outputs 0, 1, and 2?
+
+Although it hasn't changed, you can still get your puzzle input.
+
+
+Your puzzle answer was 13727.
+
+Both parts of this puzzle are complete! They provide two gold stars: **
