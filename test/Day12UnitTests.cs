@@ -158,6 +158,5 @@ inc a
             c.Run();
             Assert.Equal(3, c.RegisterA);
         }
-
     }
 }

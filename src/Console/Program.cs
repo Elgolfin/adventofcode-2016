@@ -20,7 +20,9 @@ namespace ConsoleApplication
             Console.WriteLine($"Day 12");
             Console.WriteLine($"------");
             Console.WriteLine($"After executing the assembunny code, the value left in register a is {c.RegisterA}");
-            Console.WriteLine($"Coming soon...");
+            c.Reset(0, 0, 1, 0);
+            c.Run();
+            Console.WriteLine($"After executing the assembunny code (by initializing register c to be 1), the value left in register a is {c.RegisterA}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 

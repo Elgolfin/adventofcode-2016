@@ -59,6 +59,15 @@ namespace AdventOfCode1016
             registers["d"].Value = 0;
         }
 
+        public Computer(int a = 0, int b = 0, int c = 0, int d = 0)
+        {
+            Initialize();
+            registers["a"].Value = a;
+            registers["b"].Value = b;
+            registers["c"].Value = c;
+            registers["d"].Value = d;
+        }
+
         private void Initialize ()
         {
             // Should use depedency injection to inject a collection of registers to the computer class
@@ -92,7 +101,16 @@ namespace AdventOfCode1016
             registers["b"].Value = 0;
             registers["c"].Value = 0;
             registers["d"].Value = 0;
-            Cursor.Position = 0; ;
+            Cursor.Position = 0;
+        }
+
+        public void Reset(int a = 0, int b = 0, int c = 0, int d = 0)
+        {
+            registers["a"].Value = a;
+            registers["b"].Value = b;
+            registers["c"].Value = c;
+            registers["d"].Value = d;
+            Cursor.Position = 0;
         }
 
         public void Run()
