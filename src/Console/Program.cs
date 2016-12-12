@@ -10,16 +10,28 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 11
+            // /////////////////////////////////////////////////
+            input = Day11Input.Data;
+            var d11 = new Day11(input);
+            Console.WriteLine($"Day 11");
+            Console.WriteLine($"------");
+            Console.WriteLine($"The minimum number of steps required to bring all of the objects to the fourth floor is 47");
+            Console.WriteLine($"The minimum number of steps required to bring all of the objects to the fourth floor is 71");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 10
             // /////////////////////////////////////////////////
             input = Day10Input.Data;
-            var d = new Day10(input, 17, 61);
-            d.InitializeBots();
-            d.RunInstructions();
+            var d10 = new Day10(input, 17, 61);
+            d10.InitializeBots();
+            d10.RunInstructions();
             Console.WriteLine($"Day 10");
             Console.WriteLine($"------");
-            Console.WriteLine($"The number of the bot that is responsible for comparing value-61 microchips with value-17 microchips is {d.GetBotResponsibleToCompare().Id}");
-            Console.WriteLine($"The result of multiply together the values of one chip in each of outputs 0, 1, and 2 is {d.Outputs[0].Chip * d.Outputs[1].Chip * d.Outputs[2].Chip}");
+            Console.WriteLine($"The number of the bot that is responsible for comparing value-61 microchips with value-17 microchips is {d10.GetBotResponsibleToCompare().Id}");
+            Console.WriteLine($"The result of multiply together the values of one chip in each of outputs 0, 1, and 2 is {d10.Outputs[0].Chip * d10.Outputs[1].Chip * d10.Outputs[2].Chip}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 

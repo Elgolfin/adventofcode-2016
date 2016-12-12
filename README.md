@@ -74,8 +74,9 @@ Please see the comments above the method 'Decompress_v21' to get the explanation
 
 ##Day11 Solution
 
-[Source Code][Day11SC] | 
-[Unit Tests][Day11UT]
+Borrowed the solution from https://github.com/leveneg/2016AdventOfCode
+
+I know...
 
 ##Day12 Solution
 
@@ -121,8 +122,8 @@ Please see the comments above the method 'Decompress_v21' to get the explanation
 [Day07SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day07.cs
 [Day08SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day08.cs
 [Day09SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day09.cs
-[Day10SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day09.cs
-[Day11SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day11.cs
+[Day10SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day10.cs
+[Day11SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day11.cs
 [Day12SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day12.cs
 [Day14SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day14.cs
 
@@ -142,8 +143,8 @@ Please see the comments above the method 'Decompress_v21' to get the explanation
 [Day07UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day07UnitTests.cs
 [Day08UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day08UnitTests.cs
 [Day09UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day09UnitTests.cs
-[Day10UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day09UnitTests.cs
-[Day11UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day11_UnitTest.cs
+[Day10UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day10UnitTests.cs
+[Day11UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day11UnitTests.cs
 [Day12UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day12_UnitTest.cs
 [Day14UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day14_UnitTest.cs
 
