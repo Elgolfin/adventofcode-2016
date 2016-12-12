@@ -83,6 +83,11 @@ I know...
 [Source Code][Day12SC] | 
 [Unit Tests][Day12UT]
 
+I've used the same logic as last year (See https://github.com/Elgolfin/adventofcode-2015#day23-solution) and I've made some minor changes to the 'Instruction' class.
+
+It now executes an instruction taking into account the whole collection of computer registers.
+It also always use two parameters (x and y) during the execution (could be either a register or a value depending of the instruction type).
+
 ##Day14 Solution
 
 [Source Code][Day14SC] | 
@@ -124,7 +129,7 @@ I know...
 [Day09SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day09.cs
 [Day10SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day10.cs
 [Day11SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day11.cs
-[Day12SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day12.cs
+[Day12SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day12.cs
 [Day14SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day14.cs
 
 [Day20SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day20.cs
@@ -145,7 +150,7 @@ I know...
 [Day09UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day09UnitTests.cs
 [Day10UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day10UnitTests.cs
 [Day11UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day11UnitTests.cs
-[Day12UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day12_UnitTest.cs
+[Day12UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day12UnitTests.cs
 [Day14UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day14_UnitTest.cs
 
 [Day20UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day20_UnitTest.cs

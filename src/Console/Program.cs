@@ -10,6 +10,21 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 12
+            // /////////////////////////////////////////////////
+            input = Day12Input.Data;
+            var d12 = new Day12(input);
+            var c = new Computer();
+            c.LoadProgramFromString(input);
+            c.Run();
+            Console.WriteLine($"Day 12");
+            Console.WriteLine($"------");
+            Console.WriteLine($"After executing the assembunny code, the value left in register a is {c.RegisterA}");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 11
             // /////////////////////////////////////////////////
             input = Day11Input.Data;
