@@ -88,6 +88,13 @@ I've used the same logic as last year (See https://github.com/Elgolfin/adventofc
 It now executes an instruction taking into account the whole collection of computer registers.
 It also always use two parameters (x and y) during the execution (could be either a register or a value depending of the instruction type).
 
+##Day12 Solution
+
+[Source Code][Day13SC] | 
+[Unit Tests][Day13UT]
+
+I've used a breadth-first search algorithm to solve the part I of the puzzle (See https://www.youtube.com/watch?v=E_V71Ejz3f4).
+
 ##Day14 Solution
 
 [Source Code][Day14SC] | 
@@ -130,6 +137,7 @@ It also always use two parameters (x and y) during the execution (could be eithe
 [Day10SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day10.cs
 [Day11SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day11.cs
 [Day12SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day12.cs
+[Day13SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day13.cs
 [Day14SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day14.cs
 
 [Day20SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day20.cs
@@ -151,6 +159,7 @@ It also always use two parameters (x and y) during the execution (could be eithe
 [Day10UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day10UnitTests.cs
 [Day11UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day11UnitTests.cs
 [Day12UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day12UnitTests.cs
+[Day13UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day13UnitTests.cs
 [Day14UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day14_UnitTest.cs
 
 [Day20UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day20_UnitTest.cs

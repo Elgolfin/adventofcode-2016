@@ -10,6 +10,19 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 13
+            // /////////////////////////////////////////////////
+            input = Day13Input.Data;
+            var d13 = new Day13(1, 1, 100, 100, 1352);
+            var key = "31,39";
+            Console.WriteLine($"Day 13");
+            Console.WriteLine($"------");
+            Console.WriteLine($"The fewest number of steps required to reach 31,39 is {d13.Maze[key].DistanceFromRoot}");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 12
             // /////////////////////////////////////////////////
             input = Day12Input.Data;
