@@ -88,7 +88,7 @@ I've used the same logic as last year (See https://github.com/Elgolfin/adventofc
 It now executes an instruction taking into account the whole collection of computer registers.
 It also always use two parameters (x and y) during the execution (could be either a register or a value depending of the instruction type).
 
-##Day12 Solution
+##Day13 Solution
 
 [Source Code][Day13SC] | 
 [Unit Tests][Day13UT]

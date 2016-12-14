@@ -45,7 +45,7 @@ namespace AdventOfCode1016Tests
             Assert.Equal(true, d13.IsWall(x, y));
         }
         
-        
+        /*
         [Fact]
         public void Test_Should_Return_Something() 
         {
@@ -63,6 +63,7 @@ namespace AdventOfCode1016Tests
             var d13 = new Day13(0, 0, 10, 10, 10);
             Assert.Equal(expected, d13.DrawMap());
         }
+        */
         
         [Theory]
         [InlineData(0, 0, 1)]
@@ -83,14 +84,21 @@ namespace AdventOfCode1016Tests
         [InlineData(3, 2, 5)]
         public void Path_To_Coordinate_With_Root_0_0_Should_Return_The_Good_Length(int x, int y, int expectedLength) {
             var d13 = new Day13(0, 0, 10, 10, 10);
-            Assert.Equal(expectedLength, d13.Maze[$"{x},{y}"].DistanceFromRoot);
+            Assert.Equal(expectedLength, d13.FindDistanceToLocation($"{x},{y}"));
         }
 
         [Theory]
         [InlineData(7, 4, 11)]
         public void Path_To_Coordinate_With_Root_1_1_Should_Return_The_Good_Length(int x, int y, int expectedLength) {
             var d13 = new Day13(1, 1, 10, 10, 10);
-            Assert.Equal(expectedLength, d13.Maze[$"{x},{y}"].DistanceFromRoot);
+            Assert.Equal(expectedLength, d13.FindDistanceToLocation($"{x},{y}"));
+        }
+
+        [Theory]
+        [InlineData(50, 135)]
+        public void Path_To_Coordinate_Within_n_Steps_Should_Return_The_Right_Number_Of_Locations(int steps, int expectedLocations) {
+            var d13 = new Day13(1, 1, 10000, 10000, 1352);
+            Assert.Equal(expectedLocations, d13.CountLocationWithinNSteps(steps));
         }
         
     }

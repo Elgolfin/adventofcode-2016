@@ -13,6 +13,7 @@ namespace AdventOfCode1016
         public int Width;
         public int Height;
         public Dictionary<string, Coordinate> Maze = new Dictionary<string, Coordinate>();
+        public Coordinate Root;
 
         public Day13(int rootX = 1, int rootY = 1, int width = 10, int height = 10, int favoriteNumber = 1352)
         {
@@ -21,7 +22,7 @@ namespace AdventOfCode1016
             DesignerFavoriteNumber = favoriteNumber;
             var rootKey = $"{rootX},{rootY}";
             Maze.Add(rootKey, new Coordinate(rootX, rootY));
-            InitializeMaze(Maze[rootKey]);
+            Root = Maze[rootKey];
         }
 
         public bool IsOpenSpace (int x, int y) 
@@ -78,11 +79,10 @@ namespace AdventOfCode1016
                 }
                 map.AppendLine(line.ToString());
             }
-            //Console.Write(map.ToString());
             return map.ToString();
         }
         
-        public void InitializeMaze (Coordinate from)
+        public void InitializeMaze (Coordinate from, string toKey = "")
         {
             var q = new Queue<Coordinate>();
             from.Predecessor = null;
@@ -102,6 +102,64 @@ namespace AdventOfCode1016
                 }
                 currentLocation.HasBeenVisited = true;
             }
+        }
+
+        public int FindDistanceToLocation (string toKey = "")
+        {
+            var q = new Queue<Coordinate>();
+            var from = Root;
+            from.Predecessor = null;
+            from.DistanceFromRoot = 0;
+            q.Enqueue(from);
+            var currentLocation = from;
+
+            while (q.Count() > 0) {
+                currentLocation = q.Dequeue();
+                // We have reach the location, return the distance from the root
+                if (!String.IsNullOrEmpty(toKey) && currentLocation.Key == toKey) {
+                    return currentLocation.DistanceFromRoot;
+                }
+                var connectedSpaces = GetAllConnectedOpenSpaces(currentLocation);
+                foreach (var connectedSpace in connectedSpaces) {
+                    if (!connectedSpace.HasBeenVisited) {
+                        connectedSpace.Predecessor = currentLocation;
+                        connectedSpace.DistanceFromRoot = currentLocation.DistanceFromRoot + 1;
+                        q.Enqueue(connectedSpace);
+                    }
+                }
+                currentLocation.HasBeenVisited = true;
+            }
+
+            return -1;
+        }
+
+        public int CountLocationWithinNSteps (int steps)
+        {
+            var q = new Queue<Coordinate>();
+            var from = Root;
+            from.Predecessor = null;
+            from.DistanceFromRoot = 0;
+            q.Enqueue(from);
+            var currentLocation = from;
+
+            while (q.Count() > 0) {
+                currentLocation = q.Dequeue();
+                // We've proceed all the locations wihtin the required steps, stop the loop here
+                if (currentLocation.DistanceFromRoot > steps) {
+                    break;
+                }
+                var connectedSpaces = GetAllConnectedOpenSpaces(currentLocation);
+                foreach (var connectedSpace in connectedSpaces) {
+                    if (!connectedSpace.HasBeenVisited) {
+                        connectedSpace.Predecessor = currentLocation;
+                        connectedSpace.DistanceFromRoot = currentLocation.DistanceFromRoot + 1;
+                        q.Enqueue(connectedSpace);
+                    }
+                }
+                currentLocation.HasBeenVisited = true;
+            }
+
+            return Maze.Values.Where(c => c.DistanceFromRoot <= steps).Count();
         }
 
         public List<Coordinate> GetAllConnectedOpenSpaces (Coordinate c, Dictionary<string,Coordinate> exclude = null) {

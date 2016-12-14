@@ -17,14 +17,16 @@ namespace ConsoleApplication
             var key = "31,39";
             Console.WriteLine($"Day 13");
             Console.WriteLine($"------");
-            Console.WriteLine($"The fewest number of steps required to reach 31,39 is {d13.Maze[key].DistanceFromRoot}");
-            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"The fewest number of steps required to reach 31,39 is {d13.FindDistanceToLocation(key)}");
+            d13 = new Day13(1, 1, 10000, 10000, 1352);
+            Console.WriteLine($"{d13.CountLocationWithinNSteps(50)} locations (distinct x,y coordinates, including the starting location) can be reached in at most 50 steps");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 
             // /////////////////////////////////////////////////
             // Day 12
             // /////////////////////////////////////////////////
+            /*
             input = Day12Input.Data;
             var d12 = new Day12(input);
             var c = new Computer();
@@ -38,7 +40,8 @@ namespace ConsoleApplication
             Console.WriteLine($"After executing the assembunny code (by initializing register c to be 1), the value left in register a is {c.RegisterA}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
-
+            */
+            
             // /////////////////////////////////////////////////
             // Day 11
             // /////////////////////////////////////////////////

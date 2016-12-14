@@ -20,7 +20,7 @@ namespace AdventOfCode1016Tests
             Assert.Equal(true, Day07.HasABBA(input));
         }
         */
-
+/*
         [Fact]
         public void Run_Test_Program_1_Should_Return_Register_A_Contains_42() 
         {
@@ -157,6 +157,6 @@ inc a
             c.LoadProgramFromString(input);
             c.Run();
             Assert.Equal(3, c.RegisterA);
-        }
+        }*/
     }
 }
