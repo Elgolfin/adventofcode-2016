@@ -17,7 +17,8 @@ namespace ConsoleApplication
             Console.WriteLine($"Day 14");
             Console.WriteLine($"------");
             Console.WriteLine($"The index producing the 64th one-time pad key is {d14.ReturnNthValidKey(64)}");
-            Console.WriteLine($"Coming soon...");
+            d14 = new Day14(2016);
+            Console.WriteLine($"The index producing the 64th one-time pad key and using 2016 extra MD5 calls of key stretching is {d14.ReturnNthValidKey(64)}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 

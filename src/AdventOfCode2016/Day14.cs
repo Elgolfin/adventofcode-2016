@@ -12,9 +12,16 @@ namespace AdventOfCode1016
         public string Salt = "zpqevtbw";
         public Dictionary<int, string> PrecompiledHashes = new Dictionary<int, string>();
         public int LastPrecompiledIndex = -1;
+        public int KeyStretching = 0;
         
         public Day14 ()
         {
+           PrecompileHashes();
+        }
+
+        public Day14 (int stretching)
+        {
+           KeyStretching = stretching;
            PrecompileHashes();
         }
 
@@ -24,17 +31,33 @@ namespace AdventOfCode1016
            PrecompileHashes();
         }
 
-        private void PrecompileHashes (int numToPrecompile = 10000) {
+        public Day14 (string salt, int stretching)
+        {
+           Salt = salt;
+           KeyStretching = stretching;
+           PrecompileHashes();
+        }
+
+        private void PrecompileHashes (int numToPrecompile = 1000) {
             var startIndex = LastPrecompiledIndex + 1;
             var lastIndex = startIndex + numToPrecompile - 1;
             for (var i =  startIndex ; i <= lastIndex ; i++) {
-                using (MD5 md5Hash = MD5.Create())
-                {
-                    string hash = GetMd5Hash(md5Hash, $"{Salt}{i}");
-                    PrecompiledHashes.Add(i, hash);
-                }
+                var hash = KeyStretchingMD5Hash($"{Salt}{i}", KeyStretching);
+                PrecompiledHashes.Add(i, hash);
             }
             LastPrecompiledIndex = lastIndex;
+        }
+
+        public static string KeyStretchingMD5Hash (string strToHash, int n = 0) {
+            var hash = String.Empty;;
+            using (MD5 md5Hash = MD5.Create())
+            {
+                hash = GetMd5Hash(md5Hash, strToHash);
+                for (var j = 1 ; j <= n ; j++) {
+                    hash = GetMd5Hash(md5Hash, hash);
+                }
+            }
+            return hash;
         }
 
         public int ReturnNthValidKey (int nthValidKeyNumber = 1) {
