@@ -100,6 +100,8 @@ I've used a breadth-first search algorithm to solve the part I of the puzzle (Se
 [Source Code][Day14SC] | 
 [Unit Tests][Day14UT]
 
+Precompiling the hashes in a dictionary improves the performance by a factor of 5 (i.e. for the Part I of the puzzle, it takes 3 seconds to get the right answer instead of 15 seconds, approximately).
+
 ##Day20 Solution
 
 [Source Code][Day20SC] | 
