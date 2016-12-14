@@ -138,7 +138,7 @@ I've used a breadth-first search algorithm to solve the part I of the puzzle (Se
 [Day11SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day11.cs
 [Day12SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day12.cs
 [Day13SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day13.cs
-[Day14SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day14.cs
+[Day14SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day14.cs
 
 [Day20SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day20.cs
 [Day21SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day21.cs
@@ -160,7 +160,7 @@ I've used a breadth-first search algorithm to solve the part I of the puzzle (Se
 [Day11UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day11UnitTests.cs
 [Day12UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day12UnitTests.cs
 [Day13UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day13UnitTests.cs
-[Day14UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day14_UnitTest.cs
+[Day14UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day14UnitTests.cs
 
 [Day20UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day20_UnitTest.cs
 [Day21UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day21_UnitTest.cs

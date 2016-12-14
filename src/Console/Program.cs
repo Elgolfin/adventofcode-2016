@@ -8,6 +8,18 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             string input;
+            
+            // /////////////////////////////////////////////////
+            // Day 14
+            // /////////////////////////////////////////////////
+            input = Day13Input.Data;
+            var d14 = new Day14();
+            Console.WriteLine($"Day 14");
+            Console.WriteLine($"------");
+            Console.WriteLine($"The index producing the 64th one-time pad key is {d14.ReturnNthValidKey(64)}");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
 
             // /////////////////////////////////////////////////
             // Day 13
