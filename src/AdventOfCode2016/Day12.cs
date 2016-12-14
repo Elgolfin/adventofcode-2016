@@ -73,8 +73,8 @@ namespace AdventOfCode1016
             // Should use depedency injection to inject a collection of registers to the computer class
             registers.Add("a", new Register("a"));
             registers.Add("b", new Register("b"));
-            registers.Add("c", new Register("d"));
-            registers.Add("d", new Register("c"));
+            registers.Add("c", new Register("c"));
+            registers.Add("d", new Register("d"));
             // Should use depedency injection to inject a set of instructions to the computer class
             // So when we would like to add a new instruction to the computer, no need to modify the Computer class
             instructions.Add("inc", new Instruction_INC());
@@ -89,9 +89,12 @@ namespace AdventOfCode1016
         {
             Program = new Dictionary<int, string>();
             int cpt = 0;
-            foreach (var programLine in listing.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries))
+            var lines = listing.Split('\n').Select(p => p.Trim()).ToList();
+            foreach (var programLine in lines)
             {
-                Program.Add(cpt++, programLine);
+                if (!String.IsNullOrEmpty(programLine)) {
+                    Program.Add(cpt++, programLine);
+                }
             }
         }
 
@@ -119,7 +122,7 @@ namespace AdventOfCode1016
                 string[] programLine = Program[Cursor.Position].Split(' ');
                 string code = programLine[0];
                 string x = programLine[1];
-                string y = (programLine.Length == 3) ? programLine[2] : String.Empty;
+                string y = (programLine.Length > 2) ? programLine[2] : String.Empty;
                 instructions[code].Execute(registers, Cursor, x, y);
             }
         }

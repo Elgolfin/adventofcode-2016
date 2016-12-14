@@ -8,7 +8,7 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             string input;
-            
+
             // /////////////////////////////////////////////////
             // Day 13
             // /////////////////////////////////////////////////
@@ -26,7 +26,6 @@ namespace ConsoleApplication
             // /////////////////////////////////////////////////
             // Day 12
             // /////////////////////////////////////////////////
-            /*
             input = Day12Input.Data;
             var d12 = new Day12(input);
             var c = new Computer();
@@ -40,8 +39,7 @@ namespace ConsoleApplication
             Console.WriteLine($"After executing the assembunny code (by initializing register c to be 1), the value left in register a is {c.RegisterA}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
-            */
-            
+
             // /////////////////////////////////////////////////
             // Day 11
             // /////////////////////////////////////////////////
