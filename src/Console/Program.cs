@@ -10,9 +10,21 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 15
+            // /////////////////////////////////////////////////
+            input = Day14Input.Data;
+            var d15 = new Day15();
+            Console.WriteLine($"Day 15");
+            Console.WriteLine($"------");
+            Console.WriteLine($"The first time the button can be pressend to get a capsule is {d15.PushButtonToFallThrough()}");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 14
             // /////////////////////////////////////////////////
-            input = Day13Input.Data;
+            input = Day14Input.Data;
             var d14 = new Day14();
             Console.WriteLine($"Day 14");
             Console.WriteLine($"------");
