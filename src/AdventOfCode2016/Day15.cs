@@ -29,6 +29,10 @@ namespace AdventOfCode1016
            }
         }
 
+        public void AddDisc (Disc d) {
+            Discs.Add(new Disc(d.NumberOfPositions, d.CurrentPosition));
+        }
+
         public void NextTick () {
             Time++;
             foreach (var disc in Discs) {

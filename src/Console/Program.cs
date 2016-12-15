@@ -16,8 +16,10 @@ namespace ConsoleApplication
             var d15 = new Day15();
             Console.WriteLine($"Day 15");
             Console.WriteLine($"------");
-            Console.WriteLine($"The first time the button can be pressend to get a capsule is {d15.PushButtonToFallThrough()}");
-            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"The first time the button can be press to get a capsule is {d15.PushButtonToFallThrough()}");
+            d15 = new Day15();
+            d15.AddDisc(new Disc(11, 0));
+            Console.WriteLine($"The first time the button can be press to get another capsule is {d15.PushButtonToFallThrough()}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 
