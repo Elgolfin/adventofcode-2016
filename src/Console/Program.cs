@@ -18,7 +18,8 @@ namespace ConsoleApplication
             Console.WriteLine($"Day 16");
             Console.WriteLine($"------");
             Console.WriteLine($"The correct checksum is {checksum}");
-            Console.WriteLine($"Coming soon...");
+            checksum = Day16.FillDisk("10001001100000001", 35651584);
+            Console.WriteLine($"The correct checksum is {checksum}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 

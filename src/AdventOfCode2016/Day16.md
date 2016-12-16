@@ -54,3 +54,13 @@ Your puzzle input is 10001001100000001.
 Your puzzle answer was 10101001010100001.
 
 The first half of this puzzle is complete! It provides one gold star: *
+
+
+--- Part Two ---
+
+The second disk you have to fill has length 35651584. Again using the initial state in your puzzle input, what is the correct checksum for this disk?
+
+
+Your puzzle answer was 10100001110101001.
+
+Both parts of this puzzle are complete! They provide two gold stars: **
