@@ -10,6 +10,19 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 16
+            // /////////////////////////////////////////////////
+            input = Day16Input.Data;
+            var d16 = new Day16();
+            var checksum = Day16.FillDisk("10001001100000001", 272);
+            Console.WriteLine($"Day 16");
+            Console.WriteLine($"------");
+            Console.WriteLine($"The correct checksum is {checksum}");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 15
             // /////////////////////////////////////////////////
             input = Day14Input.Data;
