@@ -18,7 +18,8 @@ namespace ConsoleApplication
             var pathToExit =  d17.FindPathToExit();
             Console.WriteLine($"------");
             Console.WriteLine($"The shortest path to exit is {pathToExit}");
-            Console.WriteLine($"Coming soon...");
+            var length =  d17.FindLongestPathToExit();
+            Console.WriteLine($"The longest path to exit takes {length} steps");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 

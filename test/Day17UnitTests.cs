@@ -103,6 +103,16 @@ namespace AdventOfCode1016Tests
             var d17 = new Day17(passcode);
             Assert.Equal(expectedPath, d17.FindPathToExit());
         }
+
+        [Theory]
+        [InlineData("ihgpwlah", 370)]
+        [InlineData("kglvqrro", 492)]
+        [InlineData("ulqzkmiv", 830)]
+        public void Find_The_LongestPath_Should_Return_The_Right_Length(string passcode, int expectedPathLength) 
+        {
+            var d17 = new Day17(passcode);
+            Assert.Equal(expectedPathLength, d17.FindLongestPathToExit());
+        }
         
     }
 }

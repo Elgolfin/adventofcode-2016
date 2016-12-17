@@ -107,6 +107,22 @@ Precompiling the hashes in a dictionary improves the performance by a factor of 
 [Source Code][Day15SC] | 
 [Unit Tests][Day15UT]
 
+##Day16 Solution
+
+[Source Code][Day16SC] | 
+[Unit Tests][Day16UT]
+
+##Day17 Solution
+
+I've used the same kind of logic I've used for the Day 13 Puzzle (a breadth-first search algorithm).
+
+Part II was quite easy. I've just to not breal the loop to find the last path to the exit
+(and therefore all the paths who lead to the exit are also found by the program).
+The last path being also the longest.
+
+[Source Code][Day17SC] | 
+[Unit Tests][Day17UT]
+
 ##Day20 Solution
 
 [Source Code][Day20SC] | 
@@ -147,6 +163,8 @@ Precompiling the hashes in a dictionary improves the performance by a factor of 
 [Day13SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day13.cs
 [Day14SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day14.cs
 [Day15SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day15.cs
+[Day16SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day16.cs
+[Day17SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day17.cs
 
 [Day20SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day20.cs
 [Day21SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day21.cs
@@ -170,6 +188,8 @@ Precompiling the hashes in a dictionary improves the performance by a factor of 
 [Day13UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day13UnitTests.cs
 [Day14UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day14UnitTests.cs
 [Day15UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day15UnitTests.cs
+[Day16UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day16UnitTests.cs
+[Day17UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day17UnitTests.cs
 
 [Day20UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day20_UnitTest.cs
 [Day21UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day21_UnitTest.cs

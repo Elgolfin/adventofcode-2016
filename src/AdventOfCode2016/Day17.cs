@@ -13,6 +13,7 @@ namespace AdventOfCode1016
         Vault Vault;
         Queue<string> _Paths = new Queue<string>();
         List<string> VisitedPaths = new List<string>();
+        List<string> AllPathsToExit = new List<string>();
         
         public Day17 (string passcode = "mmsxrhfx")
         {
@@ -20,7 +21,12 @@ namespace AdventOfCode1016
            Vault = new Vault();
         }
 
-        public string FindPathToExit ()
+        public int FindLongestPathToExit () {
+            return FindPathToExit(false).Length;
+        }
+
+        // If shortest = false, the program will find all paths who lead to the exit
+        public string FindPathToExit (bool shortest = true)
         {
             var path = String.Empty;
             _Paths.Enqueue($"{Vault.Root}|{Passcode}");
@@ -35,8 +41,12 @@ namespace AdventOfCode1016
                     var nextRoomPasscode = $"{currentPasscode}{nextRoom.Key}";
                     if (nextRoom.Value == Vault.Exit) { 
                         path = nextRoomPasscode.Replace(Passcode, "");
-                        _Paths.Clear();
-                        break;
+                        // If we do not break, the last time we go in here, it will be the last and longest path who lead to the exit
+                        if (shortest) {
+                            _Paths.Clear();
+                            break;
+                        }
+                        AllPathsToExit.Add(nextRoomPasscode.Replace(Passcode, ""));
                     } else {
                         _Paths.Enqueue($"{nextRoom.Value}|{nextRoomPasscode}");
                     }
