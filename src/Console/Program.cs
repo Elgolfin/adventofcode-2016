@@ -10,6 +10,19 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 17
+            // /////////////////////////////////////////////////
+            input = Day17Input.Data;
+            var d17 = new Day17();
+            Console.WriteLine($"Day 17");
+            var pathToExit =  d17.FindPathToExit();
+            Console.WriteLine($"------");
+            Console.WriteLine($"The shortest path to exit is {pathToExit}");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 16
             // /////////////////////////////////////////////////
             input = Day16Input.Data;
