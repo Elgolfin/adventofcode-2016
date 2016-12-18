@@ -17,8 +17,9 @@ namespace ConsoleApplication
             Console.WriteLine($"Day 18");
             Console.WriteLine($"------");
             var safeTiles = d18.GetNumberOfSafeTiles(40);
-            Console.WriteLine($"There are {safeTiles} safe tiles");
-            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"There are {safeTiles} safe tiles within 40 rows");
+            safeTiles = d18.GetNumberOfSafeTiles(400000);
+            Console.WriteLine($"There are {safeTiles} safe tiles within 400,000 rows");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 
