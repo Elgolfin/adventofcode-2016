@@ -10,6 +10,19 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 18
+            // /////////////////////////////////////////////////
+            input = Day18Input.Data;
+            var d18 = new Day18(input);
+            Console.WriteLine($"Day 18");
+            Console.WriteLine($"------");
+            var safeTiles = d18.GetNumberOfSafeTiles(40);
+            Console.WriteLine($"There are {safeTiles} safe tiles");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 17
             // /////////////////////////////////////////////////
             input = Day17Input.Data;
