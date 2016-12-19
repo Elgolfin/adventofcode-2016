@@ -10,6 +10,18 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 19
+            // /////////////////////////////////////////////////
+            var d19 = new Day19(Day19Input.Data);
+            var numElf = d19.GetElfWithAllPresents();
+            Console.WriteLine($"Day 19");
+            Console.WriteLine($"------");
+            Console.WriteLine($"Elf {numElf} gets all the presents");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 18
             // /////////////////////////////////////////////////
             input = Day18Input.Data;

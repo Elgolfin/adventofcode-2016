@@ -128,6 +128,11 @@ The last path being also the longest.
 [Source Code][Day18SC] | 
 [Unit Tests][Day18UT]
 
+##Day19 Solution
+
+[Source Code][Day19SC] | 
+[Unit Tests][Day19UT]
+
 ##Day20 Solution
 
 [Source Code][Day20SC] | 
@@ -171,6 +176,7 @@ The last path being also the longest.
 [Day16SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day16.cs
 [Day17SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day17.cs
 [Day18SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day18.cs
+[Day19SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day19.cs
 
 [Day20SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day20.cs
 [Day21SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day21.cs
@@ -197,6 +203,7 @@ The last path being also the longest.
 [Day16UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day16UnitTests.cs
 [Day17UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day17UnitTests.cs
 [Day18UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day18UnitTests.cs
+[Day19UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day19UnitTests.cs
 
 [Day20UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day20_UnitTest.cs
 [Day21UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day21_UnitTest.cs
