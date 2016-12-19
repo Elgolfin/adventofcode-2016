@@ -13,11 +13,14 @@ namespace ConsoleApplication
             // Day 19
             // /////////////////////////////////////////////////
             var d19 = new Day19(Day19Input.Data);
+            //var d19 = new Day19(5);
             var numElf = d19.GetElfWithAllPresents();
             Console.WriteLine($"Day 19");
             Console.WriteLine($"------");
+            d19 = new Day19(Day19Input.Data);
             Console.WriteLine($"Elf {numElf} gets all the presents");
-            Console.WriteLine($"Coming soon...");
+            numElf = d19.GetFormulaCrossPosition();
+            Console.WriteLine($"Elf {numElf} now gets all the presents");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 

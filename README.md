@@ -133,6 +133,11 @@ The last path being also the longest.
 [Source Code][Day19SC] | 
 [Unit Tests][Day19UT]
 
+I've made the solution of the Part I in less than 15 minutes (including unit tests) by using a queue.
+
+Three hours later, I've got stuck in Part II. :-) My methods (brute force) were way too slow to get the answer.
+So, after some research, I've borrowed a solution from the internet (who uses pure mathematics).
+
 ##Day20 Solution
 
 [Source Code][Day20SC] | 
