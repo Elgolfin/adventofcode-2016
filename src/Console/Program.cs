@@ -10,6 +10,18 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 20
+            // /////////////////////////////////////////////////
+            input = Day20Input.Data;
+            var d20 = new Day20(input);
+            Console.WriteLine($"Day 20");
+            Console.WriteLine($"------");
+            Console.WriteLine($"The lowest-valued IP that is not blocked is {d20.GetLowestValuedOFNotBlockedIPs()}");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 19
             // /////////////////////////////////////////////////
             var d19 = new Day19(Day19Input.Data);

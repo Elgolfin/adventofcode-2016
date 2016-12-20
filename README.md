@@ -182,12 +182,7 @@ So, after some research, I've borrowed a solution from the internet (who uses pu
 [Day17SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day17.cs
 [Day18SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day18.cs
 [Day19SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day19.cs
-
-[Day20SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day20.cs
-[Day21SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day21.cs
-[Day23SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day23.cs
-[Day25SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/Day25.cs
-
+[Day20SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day20.cs
 
 
 [Day01UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day01UnitTests.cs
@@ -209,8 +204,4 @@ So, after some research, I've borrowed a solution from the internet (who uses pu
 [Day17UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day17UnitTests.cs
 [Day18UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day18UnitTests.cs
 [Day19UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day19UnitTests.cs
-
-[Day20UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day20_UnitTest.cs
-[Day21UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day21_UnitTest.cs
-[Day23UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day23_UnitTest.cs
-[Day25UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/AdventOfCode2015UnitTests/Day23_UnitTest.cs
+[Day20UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day20UnitTests.cs
