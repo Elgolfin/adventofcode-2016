@@ -95,6 +95,8 @@ namespace AdventOfCode1016
         }
 
         public int IncrementId (int id) {
+            // TODO BUG HERE
+            // Second argument of Range is not the higher bound but tne count of elements to add from the lower bound (the first argument of Range)
             var newId = Enumerable.Range(id + 1, NumberOfElves).Except(RemovedElves).FirstOrDefault();
             if (newId < 1) {
                 newId = Enumerable.Range(1, id - 1).Except(RemovedElves).FirstOrDefault();
