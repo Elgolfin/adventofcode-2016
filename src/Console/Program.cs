@@ -10,6 +10,18 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 22
+            // /////////////////////////////////////////////////
+            input = Day22Input.Data;
+            var d22 = new Day22(input);
+            Console.WriteLine($"Day 22");
+            Console.WriteLine($"------");
+            Console.WriteLine($"There are {d22.ViablePairs.Count} viable pairs of nodes");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 21
             // /////////////////////////////////////////////////
             input = Day21Input.Data;
