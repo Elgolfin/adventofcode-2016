@@ -17,7 +17,8 @@ namespace ConsoleApplication
             Console.WriteLine($"Day 22");
             Console.WriteLine($"------");
             Console.WriteLine($"There are {d22.ViablePairs.Count} viable pairs of nodes");
-            Console.WriteLine($"Coming soon...");
+            var steps = d22.MoveData("38,0");
+            Console.WriteLine($"The fewest number of steps required to move the goal data to node-x0-y0 is {steps}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 

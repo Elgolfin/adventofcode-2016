@@ -116,7 +116,7 @@ Precompiling the hashes in a dictionary improves the performance by a factor of 
 
 I've used the same kind of logic I've used for the Day 13 Puzzle (a breadth-first search algorithm).
 
-Part II was quite easy. I've just to not breal the loop to find the last path to the exit
+Part II was quite easy. I've just to not break the loop to find the last path to the exit
 (and therefore all the paths who lead to the exit are also found by the program).
 The last path being also the longest.
 

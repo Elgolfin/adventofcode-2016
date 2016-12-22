@@ -11,6 +11,8 @@ namespace AdventOfCode1016
         public string Input;
         public Dictionary<string, Node> Grid = new Dictionary<string, Node>();
         public List<string> ViablePairs = new List<string>();
+        public int Width;
+        public int Height;
 
         public Day22(string input)
         {
@@ -19,10 +21,92 @@ namespace AdventOfCode1016
             GetViablePairs();
         }
 
+        public int MoveData (string from, string to = "0,0") {
+            var sum = 0;
+            var goalPath = FindShortestPath(from, to);
+            var nodesFromGoalPath = goalPath.Split('|');
+            for (var i = 1 ; i < nodesFromGoalPath.Length; i++) {
+                var emptyPath = FindShortestPath(GetEmptyNode().Id, nodesFromGoalPath[i]);
+                var nodesFromEmptyPath = emptyPath.Split('|');
+                for (var j = 1 ; j < nodesFromEmptyPath.Length; j++) {
+                    var emptyFrom = Grid[nodesFromEmptyPath[j]];
+                    var emptyTo = Grid[nodesFromEmptyPath[j-1]];
+                    //Console.WriteLine($"Move data from {emptyFrom.Name} to {emptyTo.Name}");
+                    SwapData(nodesFromEmptyPath[j-1], nodesFromEmptyPath[j]);
+                    sum++;
+                }
+                var goalFrom = Grid[nodesFromGoalPath[i-1]];
+                var goalTo = GetEmptyNode();
+                //Console.WriteLine($"Move the goal data from {goalFrom.Name} to {goalTo.Name}");
+                SwapData(goalFrom, goalTo);
+                sum++;
+            }
+            return sum;
+        }
+
+        public void SwapData (string from, string to) {
+            SwapData(Grid[from], Grid[to]);
+        }
+
+        /// The assumption here (because there is no error check) is that the target Node is empty and can receive the amount of moved data
+        public void SwapData (Node from, Node to) {
+            var tmpData = to.Used;
+            to.Used = from.Used;
+            from.Used = tmpData;
+
+            if (from.IsGoal) {
+                to.IsGoal = true;
+                from.IsGoal = false;
+            }
+
+            from.Available = from.Size - from.Used;
+            to.Available = to.Size - to.Used;
+        }
+
         public void Reset() {
             ParseLines();
             ViablePairs = new List<string>();
             GetViablePairs();
+        }
+
+        public Node GetEmptyNode () {
+            return Grid.Values.Where(n => n.Used == 0).First();
+        }
+
+        public string FindShortestPath (string from, string to)
+        {
+            return FindShortestPath(Grid[from], Grid[to]);
+        }
+
+        public string FindShortestPath (Node from, Node to)
+        {
+            var _Paths = new Queue<string>();
+            _Paths.Enqueue(from.Id);
+            from.DistanceFromStart = 0;
+            //from.Predecessor = null; // useless
+            var visitedNodes = new List<string>();
+            var currentNode = from;
+            while (_Paths.Count > 0) {
+                var currentQueueElement = _Paths.Dequeue();
+                var currentNodeId = currentQueueElement.Split('|').Last();
+                currentNode = Grid[currentNodeId];
+                if (currentNode.Id == to.Id) {
+                    return currentQueueElement;
+                }
+                if (visitedNodes.Contains(currentNode.Id)) {
+                    continue;
+                }
+                foreach (var adjacentNode in currentNode.AdjacentNodes) {
+                    if (!visitedNodes.Contains(adjacentNode.Id) && !adjacentNode.VeryFullNode && !adjacentNode.IsGoal) { 
+                        adjacentNode.DistanceFromStart = currentNode.DistanceFromStart + 1;
+                        //adjacentNode.Predecessor = currentNode; // useless
+                        _Paths.Enqueue($"{currentQueueElement}|{adjacentNode.Id}");
+                    }
+                }
+                visitedNodes.Add(currentNode.Id);
+                
+            }
+            return String.Empty;
         }
 
         private void GetViablePairs () {
@@ -54,10 +138,39 @@ namespace AdventOfCode1016
                     var node = new Node(line);
                     if (!String.IsNullOrEmpty(node.Id)) {
                         Grid.Add(node.Id, node);
+                        Width = Math.Max(Width, node.X + 1);
+                        Height = Math.Max(Height, node.Y + 1);
                     }
                 }
             }
-            // Create nodes links will take place here
+            
+            // Link the nodes together
+            foreach (var node in Grid.Values) {
+                if (node.X - 1 >= 0) {
+                    var nodeToAdd = Grid[$"{node.X - 1},{node.Y}"];
+                    node.AdjacentNodes.Add(nodeToAdd);
+                }
+                if (node.X + 1 < Width) {
+                    var nodeToAdd = Grid[$"{node.X + 1},{node.Y}"];
+                    node.AdjacentNodes.Add(nodeToAdd);
+                }
+                if (node.Y - 1 >= 0) {
+                    var nodeToAdd = Grid[$"{node.X},{node.Y - 1}"];
+                    node.AdjacentNodes.Add(nodeToAdd);
+                }
+                if (node.Y + 1 < Height) {
+                    var nodeToAdd = Grid[$"{node.X},{node.Y + 1}"];
+                    node.AdjacentNodes.Add(nodeToAdd);
+                }
+            }
+
+            // Set the Goal Node
+            Grid[$"{Width - 1},0"].IsGoal = true;
+
+            // Move the empty to node to the next node where the Goal should Move
+            // Two routes = 1) the one with the Goal
+            //              2) the one with the empty
+
         }
     }
 
@@ -69,7 +182,22 @@ namespace AdventOfCode1016
         public int X;
         public int Y;
         public string Name;
-        List<Node> AdjacentNodes = new List<Node>();
+        public List<Node> AdjacentNodes = new List<Node>();
+        public int DistanceFromStart = 0;
+        public Node Predecessor;
+        public bool IsGoal;
+        public bool VeryFullNode {
+            get {
+                return Size > 500;
+            }
+            set {}
+        }
+        public bool IsEmpty {
+            get {
+                return Size == 0;
+            }
+            set {}
+        }
 
         public Node (string nodeLine) {
             ParseNodeLine(nodeLine);
@@ -86,13 +214,13 @@ namespace AdventOfCode1016
                 Int32.TryParse(match.Groups["size"].Value, out Size);
                 Int32.TryParse(match.Groups["used"].Value, out Used);
                 Int32.TryParse(match.Groups["available"].Value, out Available);
-                Name = $"node-x{X}-y{Y}";
+                Name = $"node-y{Y}-x{X}";
                 Id = $"{X},{Y}";
             }
         }
 
         public override string ToString() {
-            return $"/dev/grid/{Name}  {Size}T  {Used}T  {Available}T";
+            return $"/dev/grid/node-x{X}-y{Y}  {Size}T  {Used}T  {Available}T";
         }
 
     }
