@@ -30,3 +30,17 @@ Now, you just need to generate a new scrambled password and you can access the s
 Your puzzle answer was baecdfgh.
 
 The first half of this puzzle is complete! It provides one gold star: *
+
+
+--- Part Two ---
+
+You scrambled the password correctly, but you discover that you can't actually modify the password file on the system. You'll need to un-scramble one of the existing passwords by reversing the scrambling process.
+
+What is the un-scrambled version of the scrambled password fbgdceah?
+
+Although it hasn't changed, you can still get your puzzle input.
+
+
+Your puzzle answer was cegdahbf.
+
+Both parts of this puzzle are complete! They provide two gold stars: **

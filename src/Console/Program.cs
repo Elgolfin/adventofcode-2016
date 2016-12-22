@@ -13,11 +13,13 @@ namespace ConsoleApplication
             // Day 21
             // /////////////////////////////////////////////////
             input = Day21Input.Data;
-            var d21 = new Day21(input, "abcdefgh");
+            var d21 = new Day21(input);
+            var scrambledPassword = d21.ScramblePassword("abcdefgh");
             Console.WriteLine($"Day 21");
             Console.WriteLine($"------");
-            Console.WriteLine($"The result of scrambling abcdefgh is {d21.ScramblingStr}");
-            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"The result of scrambling abcdefgh is {scrambledPassword}");
+            var unscrambledPassword = d21.UnScramblePassword("fbgdceah");
+            Console.WriteLine($"The un-scrambled version of the scrambled password fbgdceah is {unscrambledPassword}");
             Console.WriteLine($"---------------------------------------------");
             Console.WriteLine($"");
 

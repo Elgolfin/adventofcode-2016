@@ -10,24 +10,55 @@ namespace AdventOfCode1016
     {
         public string Input;
         public string ScramblingStr = String.Empty;
-        public Day21(string input, string scramblingStr)
+        public Queue<string> Instructions = new Queue<string>();
+        public Stack<string> ReversedInstructions = new Stack<string>();
+
+        public Day21(string input)
         {
             Input = input;
-            ScramblingStr = scramblingStr;
             ParseLines();
+        }
+
+        public void Reset() {
+            ParseLines();
+        }
+
+        public string ScramblePassword (string str) {
+            ScramblingStr = str;
+            while (Instructions.Count > 0) {
+                var line = Instructions.Dequeue();
+                SwapPosition(line);
+                RotateBasedOnPosition(line);
+                RotateLeft(line);
+                RotateRight(line);
+                SwapLetter(line);
+                ReversePosition(line);
+                MovePosition(line);
+            }
+            return ScramblingStr;
+        }
+
+        public string UnScramblePassword (string str) {
+            ScramblingStr = str;
+            while (ReversedInstructions.Count > 0) {
+                var line = ReversedInstructions.Pop();
+                UnSwapPosition(line);
+                UnRotateBasedOnPosition(line);
+                UnRotateLeft(line);
+                UnRotateRight(line);
+                SwapLetter(line);
+                ReversePosition(line);
+                UnMovePosition(line);
+            }
+            return ScramblingStr;
         }
 
         private void ParseLines () {
             var lines = Input.Split('\n').Select(p => p.Trim()).ToList();
             foreach (var line in lines) {
                 if (!String.IsNullOrEmpty(line)) {
-                    SwapPosition(line);
-                    RotateBasedOnPosition(line);
-                    RotateLeft(line);
-                    RotateRight(line);
-                    SwapLetter(line);
-                    ReversePosition(line);
-                    MovePosition(line);
+                    Instructions.Enqueue(line);
+                    ReversedInstructions.Push(line);
                 }
             }
         }
@@ -46,6 +77,20 @@ namespace AdventOfCode1016
             }
         }
 
+        private void UnSwapPosition (string line) {
+            string pattern = @"^swap position (?<x>[0-9]) with position (?<y>[0-9])$";
+            Regex regex = new Regex(pattern);
+            Match match = regex.Match(line);
+            var x = 0;
+            var y = 0;
+            if (match.Success)
+            {
+                Int32.TryParse(match.Groups["x"].Value, out y);
+                Int32.TryParse(match.Groups["y"].Value, out x);
+                ScramblingStr = ScramblingStr.SwapPositionXWithPositionY(x, y);
+            }
+        }
+
         private void RotateBasedOnPosition (string line) {
             string pattern = @"^rotate based on position of letter (?<x>[a-z])$";
             Regex regex = new Regex(pattern);
@@ -55,6 +100,26 @@ namespace AdventOfCode1016
             {
                 x = match.Groups["x"].Value[0];
                 ScramblingStr = ScramblingStr.RotateBasedOnPosition(x);
+            }
+        }
+
+        // Rotate the original string to the left once at a time and check if applying the RotateBasedOnPosition Method on it returns the original string (if yes, the rotated string is the our reversed string)
+        private void UnRotateBasedOnPosition (string line) {
+            string pattern = @"^rotate based on position of letter (?<x>[a-z])$";
+            Regex regex = new Regex(pattern);
+            Match match = regex.Match(line);
+            var x = '.';
+            var tmpStr = ScramblingStr;
+            if (match.Success)
+            {
+                x = match.Groups["x"].Value[0];
+                for (var i = 0; i < ScramblingStr.Length ; i++) {
+                    tmpStr = tmpStr.RotateLeft(1);
+                    if (tmpStr.RotateBasedOnPosition(x) == ScramblingStr) {
+                        ScramblingStr = tmpStr;
+                        break;
+                    }
+                }
             }
         }
 
@@ -69,6 +134,18 @@ namespace AdventOfCode1016
                 ScramblingStr = ScramblingStr.RotateLeft(x);
             }
         }
+        
+        private void UnRotateLeft (string line) {
+            string pattern = @"^rotate left (?<x>[0-9]) step";
+            Regex regex = new Regex(pattern);
+            Match match = regex.Match(line);
+            var x = 0;
+            if (match.Success)
+            {
+                Int32.TryParse(match.Groups["x"].Value, out x);
+                ScramblingStr = ScramblingStr.RotateRight(x);
+            }
+        }
 
         private void RotateRight (string line) {
             string pattern = @"^rotate right (?<x>[0-9]) step";
@@ -79,6 +156,18 @@ namespace AdventOfCode1016
             {
                 Int32.TryParse(match.Groups["x"].Value, out x);
                 ScramblingStr = ScramblingStr.RotateRight(x);
+            }
+        }
+
+        private void UnRotateRight (string line) {
+            string pattern = @"^rotate right (?<x>[0-9]) step";
+            Regex regex = new Regex(pattern);
+            Match match = regex.Match(line);
+            var x = 0;
+            if (match.Success)
+            {
+                Int32.TryParse(match.Groups["x"].Value, out x);
+                ScramblingStr = ScramblingStr.RotateLeft(x);
             }
         }
 
@@ -120,6 +209,20 @@ namespace AdventOfCode1016
             {
                 Int32.TryParse(match.Groups["x"].Value, out x);
                 Int32.TryParse(match.Groups["y"].Value, out y);
+                ScramblingStr = ScramblingStr.MovePosition(x, y);
+            }
+        }
+
+        private void UnMovePosition (string line) {
+            string pattern = @"^move position (?<x>[0-9]) to position (?<y>[0-9])$";
+            Regex regex = new Regex(pattern);
+            Match match = regex.Match(line);
+            var x = 0;
+            var y = 0;
+            if (match.Success)
+            {
+                Int32.TryParse(match.Groups["x"].Value, out y);
+                Int32.TryParse(match.Groups["y"].Value, out x);
                 ScramblingStr = ScramblingStr.MovePosition(x, y);
             }
         }

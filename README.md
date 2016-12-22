@@ -148,6 +148,9 @@ So, after some research, I've borrowed a solution from the internet (who uses pu
 [Source Code][Day21SC] | 
 [Unit Tests][Day21UT]
 
+I should refactor many methods as they share almost the same logic. Unit tests are well done and will secure this refactoring.
+Each instruction should be an object with a method Execute to run it.
+
 ## Day23 Solution
 
 [Source Code][Day23SC] | 
@@ -183,6 +186,7 @@ So, after some research, I've borrowed a solution from the internet (who uses pu
 [Day18SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day18.cs
 [Day19SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day19.cs
 [Day20SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day20.cs
+[Day21SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day21.cs
 
 
 [Day01UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day01UnitTests.cs
@@ -205,3 +209,4 @@ So, after some research, I've borrowed a solution from the internet (who uses pu
 [Day18UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day18UnitTests.cs
 [Day19UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day19UnitTests.cs
 [Day20UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day20UnitTests.cs
+[Day21UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day21UnitTests.cs
