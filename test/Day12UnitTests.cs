@@ -9,18 +9,6 @@ namespace AdventOfCode1016Tests
 {
     public class Day12UnitTests
     {
-        /*
-        [Theory]
-        [InlineData("abba")]
-        [InlineData("abba[mnop]qrst")] // abba[mnop]qrst supports TLS (abba outside square brackets).
-        [InlineData("ioxxoj[asdfgh]zxcvbn")] // ioxxoj[asdfgh]zxcvbn supports TLS (oxxo is outside square brackets, even though it's within a larger string).
-        [InlineData("rxpusykufgqujfe[rypwoorxdemxffui]cvvcufcqmxoxcphp[witynplrfvquduiot]vcysdcsowcxhphp[gctucefriclxaonpwe]jdprpdvpeumrhokrcjt")]
-        public void Has_ABBA_Input_Should_Return_True(string input) 
-        {
-            Assert.Equal(true, Day07.HasABBA(input));
-        }
-        */
-
         [Fact]
         public void Run_Test_Program_1_Should_Return_Register_A_Contains_42() 
         {
@@ -157,6 +145,20 @@ inc a
             c.LoadProgramFromString(input);
             c.Run();
             Assert.Equal(3, c.RegisterA);
+        }
+        
+        [Fact]
+        public void Run_Test_Program_8_Should_Return_Increment_Register_A_To_2() 
+        {
+            var input = @"inc a
+inc a
+jnz 2 a
+inc a
+";
+            var c = new Computer();
+            c.LoadProgramFromString(input);
+            c.Run();
+            Assert.Equal(2, c.RegisterA);
         }
     }
 }

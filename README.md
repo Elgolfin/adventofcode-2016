@@ -161,6 +161,11 @@ Each instruction should be an object with a method Execute to run it.
 [Source Code][Day23SC] | 
 [Unit Tests][Day23UT]
 
+I've reused the logic of the Day 12 Puzzle and make the following changes :
+  - Create a new Cmputerv2 class who inherits the original Computer Class. Therefore I've changed the logic of the Run method to accomadate the new TGL instruction.
+  - Add a new instruction and its related behavior
+  - Update many original instructions to fix some issues (i.e. now the computer supports instruction with negative argument; the unit tests to validate the changes are not included yet)
+
 ## Day25 Solution
 
 [Source Code][Day25SC] | 
@@ -193,6 +198,7 @@ Each instruction should be an object with a method Execute to run it.
 [Day20SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day20.cs
 [Day21SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day21.cs
 [Day22SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day22.cs
+[Day23SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day23.cs
 
 
 [Day01UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day01UnitTests.cs
@@ -217,3 +223,4 @@ Each instruction should be an object with a method Execute to run it.
 [Day20UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day20UnitTests.cs
 [Day21UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day21UnitTests.cs
 [Day22UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day22UnitTests.cs
+[Day23UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day23UnitTests.cs

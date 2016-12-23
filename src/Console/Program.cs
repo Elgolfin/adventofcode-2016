@@ -10,6 +10,24 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 23
+            // /////////////////////////////////////////////////
+            input = Day23Input.Data;
+            var d23 = new Day23(input);
+            var cv2 = new Computerv2(7);
+            Console.WriteLine($"{cv2.RegisterA}/{cv2.RegisterB}/{cv2.RegisterC}/{cv2.RegisterD}");
+            cv2.LoadProgramFromString(input);
+            cv2.Run();
+            Console.WriteLine($"Day 23");
+            Console.WriteLine($"------");
+            Console.WriteLine($"The value who should be sent to the safe is {cv2.RegisterA}/{cv2.RegisterB}/{cv2.RegisterC}/{cv2.RegisterD}");
+            //c.Reset(0, 0, 1, 0);
+            //c.Run();
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 22
             // /////////////////////////////////////////////////
             input = Day22Input.Data;

@@ -22,10 +22,10 @@ namespace AdventOfCode1016
         public Dictionary<int,string> Program = new Dictionary<int, string>();
         public ProgramCursor Cursor
         {
-            get; private set;
+            get; protected set;
         }
-        private Dictionary<string, Instruction> instructions = new Dictionary<string, Instruction>();
-        private Dictionary<string, Register> registers = new Dictionary<string, Register>();
+        protected Dictionary<string, Instruction> instructions = new Dictionary<string, Instruction>();
+        protected Dictionary<string, Register> registers = new Dictionary<string, Register>();
 
         public int RegisterA
         {
@@ -68,7 +68,7 @@ namespace AdventOfCode1016
             registers["d"].Value = d;
         }
 
-        private void Initialize ()
+        protected virtual void Initialize ()
         {
             // Should use depedency injection to inject a collection of registers to the computer class
             registers.Add("a", new Register("a"));
@@ -116,7 +116,7 @@ namespace AdventOfCode1016
             Cursor.Position = 0;
         }
 
-        public void Run()
+        public virtual void Run()
         {
             while (Program.ContainsKey(Cursor.Position)) {
                 string[] programLine = Program[Cursor.Position].Split(' ');
@@ -162,6 +162,9 @@ namespace AdventOfCode1016
         public string Help;
         public string Code;
         public abstract void Execute(Dictionary<string, Register> registers, ProgramCursor cursor, string x, string y);
+        public virtual void Execute(Dictionary<string, Register> registers, Dictionary<int,string> program, ProgramCursor cursor, string x, string y){
+
+        }
     }
 
     public class Instruction_INC : Instruction
@@ -205,7 +208,7 @@ namespace AdventOfCode1016
         public override void Execute(Dictionary<string, Register> registers, ProgramCursor cursor, string x, string y)
         {
             bool goToNextInstruction = false;
-            Regex regex = new Regex(@"([0-9]+)");
+            Regex regex = new Regex(@"(-?[0-9]+)");
             Match match = regex.Match(x);
             if (match.Success)
             {
@@ -224,7 +227,11 @@ namespace AdventOfCode1016
             if (goToNextInstruction) {
                 cursor.Position++;
             } else {
-                Int32.TryParse(y, out offset);
+                if (char.IsLetter(y[0])) {
+                    offset = registers[y].Value;
+                } else {
+                    Int32.TryParse(y, out offset);
+                }
                 cursor.Position += offset;
             }
         }
@@ -240,15 +247,17 @@ namespace AdventOfCode1016
         }
         public override void Execute(Dictionary<string, Register> registers, ProgramCursor cursor, string x, string y)
         {
-            Regex regex = new Regex(@"([0-9]+)");
-            Match match = regex.Match(x);
-            if (match.Success)
-            {
-                 var value = 0;
-                 Int32.TryParse(match.Groups[1].Value, out value);
-                 registers[y].Value = value;
-            } else {
-                registers[y].Value = registers[x].Value;
+            if (char.IsLetter(y[0])) {
+                Regex regex = new Regex(@"(-?[0-9]+)");
+                Match match = regex.Match(x);
+                if (match.Success)
+                {
+                    var value = 0;
+                    Int32.TryParse(match.Groups[1].Value, out value);
+                    registers[y].Value = value;
+                } else {
+                    registers[y].Value = registers[x].Value;
+                }
             }
             cursor.Position++;    
         }
