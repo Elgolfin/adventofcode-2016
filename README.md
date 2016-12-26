@@ -177,8 +177,9 @@ For the second part, I've just added a final destination corresponding to the st
 
 ## Day25 Solution
 
-[Source Code][Day25SC] | 
-[Unit Tests][Day25UT]
+I've figured out the solution by hand. 2730 (101010101010 in binary) - 2555 (7 * 365) = 175
+
+See the thread and all the excellent explanations on Reddit: https://www.reddit.com/r/adventofcode/comments/5k6yfu/2016_day_25_solutions/
 
 
 [l1]:http://adventofcode.com/
