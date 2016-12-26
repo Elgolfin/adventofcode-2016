@@ -166,6 +166,13 @@ I've reused the logic of the Day 12 Puzzle and make the following changes :
   - Add a new instruction and its related behavior
   - Update many original instructions to fix some issues (i.e. now the computer supports instruction with negative argument; the unit tests to validate the changes are not included yet)
 
+## Day24 Solution
+
+[Source Code][Day24SC] | 
+[Unit Tests][Day24UT]
+
+I've reused some logic of the Day 13 puzzle and Day 22 puzzle.
+
 ## Day25 Solution
 
 [Source Code][Day25SC] | 
@@ -199,6 +206,7 @@ I've reused the logic of the Day 12 Puzzle and make the following changes :
 [Day21SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day21.cs
 [Day22SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day22.cs
 [Day23SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day23.cs
+[Day24SC]:https://github.com/Elgolfin/adventofcode-2016/blob/master/src/AdventOfCode2016/Day24.cs
 
 
 [Day01UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day01UnitTests.cs
@@ -224,3 +232,4 @@ I've reused the logic of the Day 12 Puzzle and make the following changes :
 [Day21UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day21UnitTests.cs
 [Day22UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day22UnitTests.cs
 [Day23UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day23UnitTests.cs
+[Day24UT]:https://github.com/Elgolfin/adventofcode-2016/blob/master/test/Day24UnitTests.cs

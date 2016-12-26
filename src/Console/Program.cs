@@ -10,6 +10,19 @@ namespace ConsoleApplication
             string input;
             
             // /////////////////////////////////////////////////
+            // Day 24
+            // /////////////////////////////////////////////////
+            input = Day24Input.Data;
+            var d24 = new Day24(input);
+            Console.WriteLine($"Day 24");
+            Console.WriteLine($"------");
+            var fewestSteps = d24.FindFewestStepsBetweenAllDestinations("01234567");
+            Console.WriteLine($"Starting from location 0, the fewest number of steps required to visit every non-0 number marked on the map at least once is {fewestSteps}");
+            Console.WriteLine($"Coming soon...");
+            Console.WriteLine($"---------------------------------------------");
+            Console.WriteLine($"");
+
+            // /////////////////////////////////////////////////
             // Day 23
             // /////////////////////////////////////////////////
             input = Day23Input.Data;
