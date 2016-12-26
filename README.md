@@ -171,7 +171,9 @@ I've reused the logic of the Day 12 Puzzle and make the following changes :
 [Source Code][Day24SC] | 
 [Unit Tests][Day24UT]
 
-I've reused some logic of the Day 13 puzzle and Day 22 puzzle.
+I've reused some logic of the Day 13 puzzle and Day 22 puzzle. The distance between each destination points are pre-calculated in a lazy way (See here https://en.wikipedia.org/wiki/Lazy_loading).
+
+For the second part, I've just added a final destination corresponding to the starting point.
 
 ## Day25 Solution
 

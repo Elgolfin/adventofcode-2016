@@ -13,6 +13,7 @@ namespace AdventOfCode1016
         public int Width;
         public int Height;
         public Dictionary<string, int> DistancesBetweenDestinations = new Dictionary<string, int>();
+        public char LastRoundTripLocation = ' ';
 
         public Day24(string input)
         {
@@ -20,15 +21,18 @@ namespace AdventOfCode1016
             ParseLines();
         }
 
-        public int FindFewestStepsBetweenAllDestinations (string destinations, char startFrom = '0') {
+        public int FindFewestStepsBetweenAllDestinations (string destinations, char startFrom = '0', bool returnToStart = false) {
             var permutations = GetAllPermutations(destinations.Substring(1));
             var minDistance = 9999999;
             foreach (var permutation in permutations) {
                 var currentDistance = 0;
                 var from = destinations[0];
                 var to = ' ';
-                //Console.WriteLine("******************");
-                foreach (var destination in permutation) {
+                var fullPermutation = permutation;
+                if (returnToStart) {
+                    fullPermutation = $"{permutation}{startFrom}";
+                }
+                foreach (var destination in fullPermutation) {
                     to = destination;
                     var route = $"{from},{to}";
                     if (!DistancesBetweenDestinations.ContainsKey(route)) {
@@ -36,11 +40,14 @@ namespace AdventOfCode1016
                         DistancesBetweenDestinations[route] = d;
                     }
                     currentDistance += DistancesBetweenDestinations[route];
-                    //Console.WriteLine($"From {from} to {to}, there is {d} steps ({currentDistance} steps from 0)");
                     if (currentDistance >= minDistance) {
                         break;
                     }
                     from = to;
+                }
+                if (currentDistance < minDistance) {
+                    minDistance = currentDistance;
+                    LastRoundTripLocation = from;
                 }
                 minDistance = Math.Min(minDistance, currentDistance);
             }

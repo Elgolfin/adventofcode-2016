@@ -67,6 +67,20 @@ namespace AdventOfCode1016Tests
 ###########";
             var d24 = new Day24(input);
             Assert.Equal(14, d24.FindFewestStepsBetweenAllDestinations("01234"));
+            Assert.Equal('3', d24.LastRoundTripLocation);
+        }
+
+        [Fact]
+        public void Find_Shortest_Distance_Between_All_Destinations_And_Returning_To_Starting_Point_Should_Return_20_Steps ()
+        {
+            var input = @"###########
+#0.1.....2#
+#.#######.#
+#4.......3#
+###########";
+            var d24 = new Day24(input);
+            Assert.Equal(20, d24.FindFewestStepsBetweenAllDestinations("01234", '0', true));
+            Assert.Equal('0', d24.LastRoundTripLocation);
         }
     }
 }
