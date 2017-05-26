@@ -60,25 +60,25 @@ Online Resources:
 
 Each 'Command' object should have its own 'Run' logic. Currently, the 'Command' class owns three different kin of execution (Rect, Rotate Row and Rotate Column). Doing this way, when we need to add a command, we will just create a new object without modifying the existing one(s).
 
-##Day09 Solution
+## Day09 Solution
 
 [Source Code][Day09SC] | 
 [Unit Tests][Day09UT]
 
 Please see the comments above the method 'Decompress_v21' to get the explanation of how to calculate the number of characters who composed the uncompressed string without getting an OutOfMemoryException.
 
-##Day10 Solution
+## Day10 Solution
 
 [Source Code][Day10SC] | 
 [Unit Tests][Day10UT]
 
-##Day11 Solution
+## Day11 Solution
 
 Borrowed the solution from https://github.com/leveneg/2016AdventOfCode
 
 I know...
 
-##Day12 Solution
+##D ay12 Solution
 
 [Source Code][Day12SC] | 
 [Unit Tests][Day12UT]
@@ -88,31 +88,31 @@ I've used the same logic as last year (See https://github.com/Elgolfin/adventofc
 It now executes an instruction taking into account the whole collection of computer registers.
 It also always use two parameters (x and y) during the execution (could be either a register or a value depending of the instruction type).
 
-##Day13 Solution
+## Day13 Solution
 
 [Source Code][Day13SC] | 
 [Unit Tests][Day13UT]
 
 I've used a breadth-first search algorithm to solve the part I of the puzzle (See https://www.youtube.com/watch?v=E_V71Ejz3f4).
 
-##Day14 Solution
+## Day14 Solution
 
 [Source Code][Day14SC] | 
 [Unit Tests][Day14UT]
 
 Precompiling the hashes in a dictionary improves the performance by a factor of 5 (i.e. for the Part I of the puzzle, it takes 3 seconds to get the right answer instead of 15 seconds, approximately).
 
-##Day15 Solution
+## Day15 Solution
 
 [Source Code][Day15SC] | 
 [Unit Tests][Day15UT]
 
-##Day16 Solution
+## Day16 Solution
 
 [Source Code][Day16SC] | 
 [Unit Tests][Day16UT]
 
-##Day17 Solution
+## Day17 Solution
 
 I've used the same kind of logic I've used for the Day 13 Puzzle (a breadth-first search algorithm).
 
@@ -123,12 +123,12 @@ The last path being also the longest.
 [Source Code][Day17SC] | 
 [Unit Tests][Day17UT]
 
-##Day18 Solution
+## Day18 Solution
 
 [Source Code][Day18SC] | 
 [Unit Tests][Day18UT]
 
-##Day19 Solution
+## Day19 Solution
 
 [Source Code][Day19SC] | 
 [Unit Tests][Day19UT]
@@ -138,7 +138,7 @@ I've made the solution of the Part I in less than 15 minutes (including unit tes
 Three hours later, I've got stuck in Part II. :-) My methods (brute force) were way too slow to get the answer.
 So, after some research, I've borrowed a solution from the internet (who uses pure mathematics).
 
-##Day20 Solution
+## Day20 Solution
 
 [Source Code][Day20SC] | 
 [Unit Tests][Day20UT]
