@@ -30,7 +30,7 @@ namespace AdventOfCode1016Tests
         }
         
         [Fact]
-        public void Load_The_Input_Map_As_String_Should_Return_A_Map_Of_55_Locations() 
+        public void Load_The_Input_Map_As_String_Should_Return_A_Map_Of_55_Locations_1() 
         {
             var input = @"###########
 #0.1.....2#

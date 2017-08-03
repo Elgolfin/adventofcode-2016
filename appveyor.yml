@@ -15,7 +15,8 @@ init:
 - ps: $Env:LABEL = "CI" + $Env:APPVEYOR_BUILD_NUMBER.PadLeft(5, "0")
 before_build:
 #- nuget restore -PackagesDirectory packages
-- appveyor-retry dotnet restore -v Minimal #Debug
+- dotnet restore src/Console
+- dotnet restore test
 build_script:
 - dotnet build "src/Console" -c %CONFIGURATION% --version-suffix %LABEL%
 - dotnet build "test" -c %CONFIGURATION% --version-suffix %LABEL%
@@ -35,7 +36,7 @@ after_build:
 - dotnet publish "src/Console" -c %CONFIGURATION% --version-suffix %LABEL% -o artifacts\Console
 - dotnet publish "test" -c %CONFIGURATION% --version-suffix %LABEL% -o artifacts\Console
 test_script:
-- dotnet test "test" -c %CONFIGURATION%
+- cd test && dotnet test -c %CONFIGURATION% && cd ..
 #test_script:
 #- C:\users\appveyor\.nuget\packages\OpenCover\4.6.519\tools\OpenCover.Console.exe -target:C:\users\appveyor\.nuget/packages/xunit.runner.console/2.1.0/tools/xunit.console.exe "-targetargs:""test.dll"" -noshadow" -targetdir:./artifacts\console -filter:"+[AdventOfCode2016*]*" -output:opencoverCoverage.xml -returntargetcode -skipautoprops -log:ALL -searchdirs:C:\users\appveyor\.nuget\packages 
 #- ps: $env:OPENCOVER_CONSOLE -register:user -target:$env:XUNIT_CONSOLE "-targetargs:""test.dll"" -noshadow -appveyor -parallel none -xml results.xml" -targetdir:$env:OPENCOVER_TARGETDIR -filter:"+[AdventOfCode2016*]*" -output:opencoverCoverage.xml -returntargetcode -skipautoprops -log:ALL -searchdirs:$env:OPENCOVER_SEARCHDIRS
@@ -45,7 +46,7 @@ test_script:
 #    - 'test/bin/Debug/netcoreapp1.0/test.dll'
 artifacts:
 - path: artifacts\**\*.*
-cache:
-- '%USERPROFILE%\.nuget\packages'
-on_finish: # Run the demo to show that it works
-- dotnet artifacts\Console\Console.dll
+# cache:
+# - '%USERPROFILE%\.nuget\packages'
+# on_finish: # Run the demo to show that it works
+# - dotnet artifacts\Console\Console.dll

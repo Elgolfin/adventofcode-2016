@@ -10,13 +10,13 @@ Online Resources:
 ### Installation
 - git clone https://github.com/Elgolfin/adventofcode-2016.git
 - cd adventofcode-2016 
-- dotnet restore
+- dotnet restore src/Console
+- dotnet restore test
 
 ### Run the console app
-- dotnet run src/console
-
+- cd src/Console && dotnet run && cd ../..
 ### Execute the unit tests suite
-- dotnet test test
+- cd test && dotnet test && cd ..
 
 ## Day01 Solution
 
